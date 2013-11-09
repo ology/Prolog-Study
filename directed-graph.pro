@@ -19,6 +19,6 @@ tedge(Node1,Node3) :-
 
 path(Node1,Node2) :-
     edge(Node1,Node2).
-path(Node1,Node2) :-
-    edge(Node1,SomeNode),
-    path(SomeNode,Node2).
+path(Node1,NodeN) :-
+    edge(Node1,NodeI),
+    path(NodeI,NodeN).
