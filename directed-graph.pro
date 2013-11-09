@@ -1,6 +1,6 @@
 /* http://classes.soe.ucsc.edu/cmps112/Spring03/languages/prolog/PrologIntro.pdf
-   Directed graph with handy edge rules example:
-*/
+
+/* Directed graph with handy edge rules example: */
 edge(a, b).
 edge(a, f).
 edge(b, c).
@@ -17,7 +17,6 @@ show_edges(X, Y) :-
     edge(X, Y),
     write(Y), nl,
     fail.
-
 path(Node1, Node2) :-
     edge(Node1, Node2).
 path(Node1, NodeN) :-
