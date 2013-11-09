@@ -1,5 +1,6 @@
-% http://classes.soe.ucsc.edu/cmps112/Spring03/languages/prolog/PrologIntro.pdf
-
+/* http://classes.soe.ucsc.edu/cmps112/Spring03/languages/prolog/PrologIntro.pdf
+   Directed graph with handy edge rules example:
+*/
 edge(a, b).
 edge(a, f).
 edge(b, c).
@@ -14,7 +15,7 @@ edge(f, g).
 edge(g, c).
 all_edges(X, Y) :-
     edge(X, Y),
-    write(Y),nl,
+    write(Y), nl,
     fail.
 
 path(Node1, Node2) :-
@@ -24,5 +25,5 @@ path(Node1, NodeN) :-
     path(NodeI, NodeN).
 all_paths(X, Y) :-
     path(X, Y),
-    write(Y),nl,
+    write(Y), nl,
     fail.
