@@ -1,8 +1,7 @@
 /* Music studio gear <=> cable cross-referencer */
 
 /* Declaration of the equipment record:
-
-gear(name,
+ gear(name,
     midi-in, midi-thru, midi-out, usb,
     stereo-quarter-trs-in, stereo-quarter-trs-out,
     left-quarter-trs-in, right-quarter-trs-in,
@@ -41,9 +40,7 @@ gear(amplifier,
     0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0).
 
 /* Declaration of the cable record:
-
-cord(enda, enda-type, endb, endb-type, y-split, number, length).
-
+ cord(enda, enda-type, endb, endb-type, y-split, number, length).
 */
 
 cord(midi, male, midi, male, 0, 2, 1).
