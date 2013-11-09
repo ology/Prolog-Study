@@ -1,4 +1,4 @@
-/* http://classes.soe.ucsc.edu/cmps112/Spring03/languages/prolog/PrologIntro.pdf
+/* Directed graph inspection */
 
 /* Directed graph with handy edge rules example: */
 edge(a, b).
