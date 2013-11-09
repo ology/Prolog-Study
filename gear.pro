@@ -18,6 +18,7 @@
     quarter-headphone, mini-headphone).
 */
 
+/* TODO Use DBI to declare this, instead of in-line hardcoding. */
 gear(korg-ms2000r,
     1, 1, 1, 0, 0, 0, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 0).
 gear(nord-lead-ii,
@@ -43,6 +44,7 @@ gear(amplifier,
  cord(enda, enda-type, endb, endb-type, y-split, number, length).
 */
 
+/* TODO Use DBI to declare this, instead of in-line hardcoding. */
 cord(midi, male, midi, male, 0, 2, 1).
 cord(usb-large, female, usb-normal, female, 0, 4, 0.5).
 cord(quarter-trs, male, quarter-trs, male, 0, 2, 2).
