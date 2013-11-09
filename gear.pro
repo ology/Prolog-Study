@@ -1,4 +1,6 @@
-/* Music studio gear-cable cross-reference
+/* Music studio gear <=> cable cross-referencer */
+
+/* Declaration of the equipment record:
 
 gear(name,
     midi-in, midi-thru, midi-out, usb,
@@ -15,8 +17,6 @@ gear(name,
     power,
     program-change-switch, keyboard-sustain,
     quarter-headphone, mini-headphone).
-
-cord(enda, enda-type, endb, endb-type, y-split, number, length).
 */
 
 gear(korg-ms2000r,
@@ -39,6 +39,12 @@ gear(sennheiser-headphones,
     0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0).
 gear(amplifier,
     0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0).
+
+/* Declaration of the cable record:
+
+cord(enda, enda-type, endb, endb-type, y-split, number, length).
+
+*/
 
 cord(midi, male, midi, male, 0, 2, 1).
 cord(usb-large, female, usb-normal, female, 0, 4, 0.5).
