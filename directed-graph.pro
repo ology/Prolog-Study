@@ -13,7 +13,7 @@ edge(f, c).
 edge(f, e).
 edge(f, g).
 edge(g, c).
-all_edges(X, Y) :-
+show_edges(X, Y) :-
     edge(X, Y),
     write(Y), nl,
     fail.
@@ -23,7 +23,7 @@ path(Node1, Node2) :-
 path(Node1, NodeN) :-
     edge(Node1, NodeI),
     path(NodeI, NodeN).
-all_paths(X, Y) :-
+show_paths(X, Y) :-
     path(X, Y),
     write(Y), nl,
     fail.
