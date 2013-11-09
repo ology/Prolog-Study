@@ -13,12 +13,12 @@ edge(f, e).
 edge(f, g).
 edge(g, c).
 
-tedge(Node1,Node3) :-
-    edge(Node1,Node2),
-    edge(Node2,Node3).
+tedge(Node1, Node3) :-
+    edge(Node1, Node2),
+    edge(Node2, Node3).
 
-path(Node1,Node2) :-
-    edge(Node1,Node2).
-path(Node1,NodeN) :-
-    edge(Node1,NodeI),
-    path(NodeI,NodeN).
+path(Node1, Node2) :-
+    edge(Node1, Node2).
+path(Node1, NodeN) :-
+    edge(Node1, NodeI),
+    path(NodeI, NodeN).
