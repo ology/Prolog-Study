@@ -12,13 +12,17 @@ edge(f, c).
 edge(f, e).
 edge(f, g).
 edge(g, c).
-
-tedge(Node1, Node3) :-
-    edge(Node1, Node2),
-    edge(Node2, Node3).
+all_edges(X, Y) :-
+    edge(X, Y),
+    write(Y),nl,
+    fail.
 
 path(Node1, Node2) :-
     edge(Node1, Node2).
 path(Node1, NodeN) :-
     edge(Node1, NodeI),
     path(NodeI, NodeN).
+all_paths(X, Y) :-
+    path(X, Y),
+    write(Y),nl,
+    fail.
