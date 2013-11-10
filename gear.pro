@@ -82,10 +82,10 @@ device(digitech-processor, {
 */
 cord(midi, male, midi, male).
 cord(usb-large, female, usb-normal, female).
-cord(quarter-trs, male, quarter-trs, male).
-cord(quarter-trs, male, quarter-trs, male).
-cord(quarter-trs, male, quarter-trs, female).
-cord(quarter-trs, female, quarter-trs, female).
-cord(mini-trs, male, mini-trs, male).
-cord(mini-trs, male, mini-trs, female).
+cord(quarter, male, quarter, male).
+cord(quarter, male, quarter, male).
+cord(quarter, male, quarter, female).
+cord(quarter, female, quarter, female).
+cord(mini, male, mini, male).
+cord(mini, male, mini, female).
 
