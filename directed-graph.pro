@@ -13,10 +13,14 @@ edge(f, c).
 edge(f, e).
 edge(f, g).
 edge(g, c).
+
+/* */
 show_edges(X, Y) :-
     edge(X, Y),
     write(Y), nl,
     fail.
+
+/* */
 path(Node1, Node2) :-
     edge(Node1, Node2).
 path(Node1, NodeN) :-
@@ -26,3 +30,8 @@ show_paths(X, Y) :-
     path(X, Y),
     write(Y), nl,
     fail.
+
+/* */
+chain(X,Y,[X,Y]) :- edge(X,Y).
+chain(X,Y,[X|Z]) :- edge(X,I), path(I,Y), chain(I,Y,Z).
+chain(X,Y,[]).
