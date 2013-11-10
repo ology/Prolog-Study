@@ -1,7 +1,7 @@
-/* Music studio gear <=> cable cross-referencer */
+/* Music studio device <=> cable cross-referencer */
 
 /* Declaration of the equipment record:
- gear(name,
+ device(name,
     thumb-drive, pcmcia, usb-normal, usb-large, firewire,
     midi-in, midi-thru, midi-out,
     stereo-quarter-trs-in, stereo-quarter-trs-out,
@@ -19,41 +19,41 @@
 */
 
 /* TODO Use DBI to declare this, instead of in-line hardcoding. */
-gear(maudio-monitors, [
+device(maudio-monitors, [
     left-quarter-trs-in, right-quarter-trs-in,
     left-rca-in, right-rca-in,
     left-raw-wire-in, right-raw-wire-in,
     mini-headphone, power
 ]).
-gear(amplifier, [ left-quarter-trs-in, power ]).
-gear(sennheiser-headphones, [ stereo-quarter-trs-in ]).
-gear(macbook-pro, [
+device(amplifier, [ left-quarter-trs-in, power ]).
+device(sennheiser-headphones, [ stereo-quarter-trs-in ]).
+device(macbook-pro, [
     thumb-drive, pcmcia, usb-normal, firewire,
     stereo-mini-trs-in, stereo-mini-trs-out,
     power]).
-gear(external-drive, [ firewire ]).
-gear(external-drive, [ usb-mini, firewire, power ]).
-gear(korg-ms2000r, [
+device(external-drive, [ firewire ]).
+device(external-drive, [ usb-mini, firewire, power ]).
+device(korg-ms2000r, [
     midi-in, midi-thru, midi-out,
     left-quarter-trs-in, right-quarter-trs-in,
     left-quarter-trs-out, right-quarter-trs-out,
     program-change-switch, keyboard-sustain,
     quarter-trs-headphone, power]).
-gear(nord-lead-ii, [
+device(nord-lead-ii, [
     pcmcia,
     midi-in, midi-thru, midi-out,
     left-quarter-trs-out, right-quarter-trs-out,
     quarter-trs-out-C, quarter-trs-out-D,
     program-change-switch, keyboard-sustain,
     quarter-headphone, power]).
-gear(roland-gr, [
+device(roland-gr, [
     midi-in, midi-out, roland-midi-in,
     left-quarter-trs-in, right-quarter-trs-in,
     left-quarter-trs-out, right-quarter-trs-out,
     guitar-quarter-trs-out,
     power]).
-gear(godin-acs, [ roland-midi-out, guitar-quarter-trs-out ]).
-gear(yamaha-dtxtreme-iii, [
+device(godin-acs, [ roland-midi-out, guitar-quarter-trs-out ]).
+device(yamaha-dtxtreme-iii, [
     thumb-drive, usb-normal,
     midi-in, midi-out,
     stereo-quarter-trs-in,
@@ -64,7 +64,7 @@ gear(yamaha-dtxtreme-iii, [
     digital-out,
     quarter-headphone, power
 ]).
-gear(behringer-mixer, [
+device(behringer-mixer, [
     left-quarter-trs-out, right-quarter-trs-out,
     quarter-trs-out3, quarter-trs-out4,
     left-xlr-out, right-xlr-out,
