@@ -77,8 +77,3 @@ cord(quarter-trs, female, quarter-trs, female, 0, 1, 0).
 cord(mini-trs, male, mini-trs, male, 0, 1, 0.5).
 cord(mini-trs, male, mini-trs, female, 1, 1, 0.5).
 
-/* Example Queries:
-distance([godin, roland-gr, amplifier]).
-needed(Chords, [godin, amplifier]).
-*/
-
