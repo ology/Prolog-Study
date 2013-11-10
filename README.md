@@ -3,13 +3,10 @@ Prolog-Study
 
 Exercises and experiments in Prolog
 
-Notes:
-------
+### Notes:
 
 **Logic programming**: For what parameter values does the expression evaluate to
 true?
-
-Prolog is effectively typeless.
 
 The **declarative** component of a Prolog program consists of facts and rules
 which serve to define relations (in the mathematical sense) on sets of values.
