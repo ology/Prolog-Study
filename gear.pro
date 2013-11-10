@@ -68,7 +68,7 @@ device(behringer-mixer, [
     left-aux-return2, right-aux-return2,
     quarter-headphone, power
 ]).
-device(digitech-processor, {
+device(digitech-processor, [
     midi-in, midi-out,
     left-quarter-out, right-quarter-out,
     aux-send1, aux-send2,
