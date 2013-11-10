@@ -1,7 +1,7 @@
 /* Music studio device <=> cable cross-referencer */
-
-/* Declaration of the equipment record:
 /* TODO Use DBI to declare this, instead of in-line hardcoding. */
+
+/* Declaration of the equipment record: */
 device(maudio-monitors, [
     left-quarter-trs-in, right-quarter-trs-in,
     left-rca-in, right-rca-in,
@@ -80,7 +80,6 @@ device(digitech-processor, {
 /* Declaration of the cable record:
  cord(enda, enda-type, endb, endb-type, y-split, number, length).
 */
-/* TODO Use DBI to declare this, instead of in-line hardcoding. */
 cord(midi, male, midi, male, 0, 2, 1).
 cord(usb-large, female, usb-normal, female, 0, 4, 0.5).
 cord(quarter-trs, male, quarter-trs, male, 0, 2, 2).
