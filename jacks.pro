@@ -1,19 +1,19 @@
-/* Jacks and their properties */.
-/*        Type,     I/O,    Pole,   Size,       Description */.
+/* Jacks and their properties */
+/*        Type,     I/O,    Pole,   Size,       Description */
 jack_type(power,    in,     mono,   barrel,     ac).
-jack_type(midi,     in,     mono,   5mm,        data).
-jack_type(midi,     out,    mono,   5mm,        data).
-jack_type(midi,     thru,   mono,   5mm,        data).
-jack_type(midi,     in,     mono,   5mm,        roland).
-jack_type(midi,     out,    mono,   5mm,        roland).
-jack_type(firewire, in,     mono,   400,        storage).
-jack_type(firewire, in,     mono,   800,        storage).
-jack_type(pcmcia,   in,     mono,   various,    storage).
-jack_type(rca,      in,     left,   0.90cm,     line).
-jack_type(rca,      out,    left,   0.90cm,     line).
-jack_type(rca,      in,     right,  0.90cm,     line).
-jack_type(rca,      out,    right,  0.90cm,     line).
-jack_type(rca,      out,    mono,   0.90 cm,    digital).
+jack_type(midi,     in,     mono,   normal,     data).
+jack_type(midi,     out,    mono,   normal,     data).
+jack_type(midi,     thru,   mono,   normal,     data).
+jack_type(midi,     in,     mono,   normal,     d).
+jack_type(midi,     out,    mono,   normal,     d).
+jack_type(firewire, in,     bi,     type400,    storage).
+jack_type(firewire, in,     bi,     type800,    storage).
+jack_type(pcmcia,   in,     bi,     typeI,      storage).
+jack_type(rca,      in,     left,   normal,     line).
+jack_type(rca,      out,    left,   normal,     line).
+jack_type(rca,      in,     right,  normal,     line).
+jack_type(rca,      out,    right,  normal,     line).
+jack_type(rca,      out,    mono,   normal,     digital).
 jack_type(trs,      in,     mono,   quarter,    key-sustain).
 jack_type(trs,      in,     mono,   quarter,    prog-change).
 jack_type(trs,      out,    mono,   quarter,    aux-send).
