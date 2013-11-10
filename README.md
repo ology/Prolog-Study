@@ -54,4 +54,8 @@ When an atom from the query has been unified with the head of a rule (or a
 fact), **resolution** replaces the atom with the body of the rule (or nothing,
 if a fact) and then applies the substitution to the new query.
 
-To be continued...
+### To be continued...
+
+-- [Prolog A Tutorial Introduction](http://classes.soe.ucsc.edu/cmps112/Spring03/languages/prolog/PrologIntro.pdf)
+[pdf] by Lu & Mead, Bucknell University
+
