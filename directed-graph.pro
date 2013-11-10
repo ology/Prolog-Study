@@ -35,3 +35,7 @@ show_paths(X, Y) :-
 chain(X,Y,[X,Y]) :- edge(X,Y).
 chain(X,Y,[X|Z]) :- edge(X,I), path(I,Y), chain(I,Y,Z).
 chain(X,Y,[]).
+/*
+ ?- chain(a,d,X).
+ X = [a, b, c, d] .
+*/
