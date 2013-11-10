@@ -47,6 +47,13 @@ device(yamaha-dtxtreme-iii, [
     digital-out,
     quarter-headphone, power
 ]).
+device(maudio-keybaord-interface, [
+    midi-in, midi-out, usb-large,
+    stereo-quarter-trs-in,
+    quarter-trs-in,
+    xlr-in,
+    power
+]).
 device(behringer-mixer, [
     left-quarter-trs-out, right-quarter-trs-out,
     quarter-trs-out3, quarter-trs-out4,
@@ -59,6 +66,13 @@ device(behringer-mixer, [
     aux-send1, aux-send2,
     left-aux-return1, right-aux-return1,
     left-aux-return2, right-aux-return2,
+    quarter-headphone, power
+]).
+device(digitech-processor, {
+    midi-in, midi-out,
+    left-quarter-trs-out, right-quarter-trs-out,
+    aux-send1, aux-send2,
+    left-aux-return1, right-aux-return1,
     program-change-switch,
     quarter-headphone, power
 ]).
@@ -66,7 +80,6 @@ device(behringer-mixer, [
 /* Declaration of the cable record:
  cord(enda, enda-type, endb, endb-type, y-split, number, length).
 */
-
 /* TODO Use DBI to declare this, instead of in-line hardcoding. */
 cord(midi, male, midi, male, 0, 2, 1).
 cord(usb-large, female, usb-normal, female, 0, 4, 0.5).
