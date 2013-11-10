@@ -1,23 +1,6 @@
 /* Music studio device <=> cable cross-referencer */
 
 /* Declaration of the equipment record:
- device(name,
-    thumb-drive, pcmcia, usb-normal, usb-large, firewire,
-    midi-in, midi-thru, midi-out,
-    stereo-quarter-trs-in, stereo-quarter-trs-out,
-    left-quarter-trs-in, right-quarter-trs-in,
-    left-quarter-trs-out, right-quarter-trs-out,
-    stereo-mini-trs-in, stereo-mini-trs-out,
-    left-mini-trs-in, right-mini-trs-in,
-    left-mini-trs-out, right-mini-trs-out,
-    left-rca-in, right-rca-in, left-rca-out, right-rca-out,
-    xlr-in, xlr-out, digital-out, optical-out,
-    left-raw-wire, right-raw-wire,
-    program-change-switch, keyboard-sustain,
-    quarter-trs-headphone, mini-headphone, power
-).
-*/
-
 /* TODO Use DBI to declare this, instead of in-line hardcoding. */
 device(maudio-monitors, [
     left-quarter-trs-in, right-quarter-trs-in,
