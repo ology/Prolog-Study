@@ -3,30 +3,31 @@ Prolog-Study
 
 Exercises and experiments in Prolog
 
-*Notes*:
+Notes:
+------
 
 **Logic programming**: For what parameter values does the expression evaluate to
 true?
 
 Prolog is effectively typeless.
 
-The *declarative* component of a Prolog program consists of facts and rules
+The **declarative** component of a Prolog program consists of facts and rules
 which serve to define relations (in the mathematical sense) on sets of values.
-The *imperative* component is its execution engine based on unification and
+The **imperative** component is its execution engine based on unification and
 resolution, a mechanism for recursively extracting sets of data values implicit
 in the facts and rules of a program.
 
 A **fact** is a Prolog statement consisting of an identifier (the **predicate**)
 followed by an n-tuple of constants.  The identifier is the name of a
 (mathematical) relation.  The fact states that the specified n-tuple is in the
-relation.  When a tuple of values is in a relation we say the tuple *satisfies*
-the predicate.
+relation.  When a tuple of values is in a relation we say the tuple
+**satisfies** the predicate.
 
 A fact states that a certain tuple of values satisfies a predicate
 *unconditionally*.  A **rule** gives conditions under which tuples satisfy a
 predicate.  (So a fact is just a "constant" rule.)
 
-In Prolog the rule provides the mechanism for abstraction, and specifies under
+In Prolog the *rule* provides the mechanism for abstraction, and specifies under
 what conditions a tuple of values satisfies a predicate.
 
 The basic building block of a rule is called an **atom**: a predicate followed
