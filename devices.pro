@@ -77,15 +77,3 @@ device(digitech-processor, [
     quarter-headphone, power
 ]).
 
-/* Declaration of the cable record:
- cord(enda, enda-type, endb, endb-type, y-split, number, length).
-*/
-cord(midi, male, midi, male).
-cord(usb-large, female, usb-normal, female).
-cord(quarter, male, quarter, male).
-cord(quarter, male, quarter, male).
-cord(quarter, male, quarter, female).
-cord(quarter, female, quarter, female).
-cord(mini, male, mini, male).
-cord(mini, male, mini, female).
-
