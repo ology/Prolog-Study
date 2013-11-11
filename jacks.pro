@@ -1,5 +1,8 @@
-/* Jacks and their properties */
-/*        Type,     I/O,    Pole,   Size,       Description */
+/* Jacks (for plugging-in cords) and their properties. */
+
+          Type,     I/O,    Pole,   Size,       Description
+          _________________________________________________
+*/
 jack_type(power,    in,     mono,   barrel,     ac).
 jack_type(midi,     in,     mono,   normal,     data).
 jack_type(midi,     out,    mono,   normal,     data).
@@ -32,10 +35,10 @@ jack_type(trs,      in,     right,  quarter,    line).
 jack_type(trs,      out,    right,  quarter,    line).
 jack_type(trs,      in,     stereo, mini,       line).
 jack_type(trs,      out,    stereo, mini,       line).
-jack_type(usb,      in-out, bi,     normal,     storage).
-jack_type(usb,      in-out, bi,     large,      storage).
-jack_type(usb,      in,     bi,     mini,       storage).
-jack_type(usb,      in,     bi,     normal,     storage).
+jack_type(usb,      thru,   bi,     normal,     storage).
+jack_type(usb,      thru,   bi,     large,      storage).
+jack_type(usb,      thru,   bi,     mini,       storage).
+jack_type(usb,      thru,   bi,     normal,     storage).
 jack_type(raw,      in,     left,   wire,       line).
 jack_type(raw,      in,     right,  wire,       line).
 jack_type(xlr,      in,     mono,   normal,     line).
