@@ -1,18 +1,18 @@
 /* Port (or "ports" for connecting cords) and their properties.
-port(Name_as_in_devices,    Type,   IO,    Pole,   Size)
+port(Name_on_devices, Type, IO, Gender, Size)
 */
 
 /* MIDI */
-port(midi-in,   midi,   in,     female, normal).
-port(midi-out,  midi,   out,    female, normal).
-port(midi-thru, midi,   bi,     female, normal).
+port(midi-in,   midi, in,  female, normal).
+port(midi-out,  midi, out, female, normal).
+port(midi-thru, midi, bi,  female, normal).
 
 /* RCA */
-port(male-rca-in,    rca,    in,     male,   normal).
-port(male-rca-out,   rca,    out,    male,   normal).
-port(female-rca-in,  rca,    in,     female, normal).
-port(female-rca-out, rca,    out,    female, normal).
-port(digital-out,    rca,    out,    male,   normal).
+port(male-rca-in,    rca, in,  male,   normal).
+port(male-rca-out,   rca, out, male,   normal).
+port(female-rca-in,  rca, in,  female, normal).
+port(female-rca-out, rca, out, female, normal).
+port(digital-out,    rca, out, male,   normal).
 
 /* Quarter-inch TRS */
 port(left-quarter-in,    trs, in,  female, quarter).
@@ -37,8 +37,8 @@ port(left-aux-return2,   trs, in,  female, quarter).
 port(right-aux-return2,  trs, in,  female, quarter).
 port(stereo-quarter-in,  trs, in,  female, quarter).
 port(stereo-quarter-out, trs, out, female, quarter).
-port(stereo-mini-in,     trs, in,  female, mini).
-port(stereo-mini-out,    trs, out, female, mini).
+port(stereo-mini-in,     trs, in,  female, eighth).
+port(stereo-mini-out,    trs, out, female, eighth).
 port(program-change,     trs, in,  female, quarter).
 port(keyboard-sustain,   trs, in,  female, quarter).
 
