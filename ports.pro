@@ -1,4 +1,4 @@
-/* Port (or "ports" for connecting cords) and their properties.
+/* Ports (for connecting cords) and their properties.
 port(Name_on_devices, Type, IO, Gender, Size)
 */
 
