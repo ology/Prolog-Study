@@ -34,16 +34,16 @@ half_cable(fw,    male, 800).
 half_cable(flash, male, typei).
 
 /* A full-cable is two halves.
-cable(Type) :-
-    half_cable(Type, _, _), half_cable(Type, _, _).
+full_cable(EndA, EndB) :-
+    half_cable(EndA, _, _), half_cable(EndB, _, _).
 
 /* A Y-cable is three halves (usually a small adapter).
-cable(Type) :-
-    half_cable(Type, _, _), half_cable(Type, _, _),
-    half_cable(Type, _, _).
+y_cable(EndA, EndB) :-
+    half_cable(EndA, _, _), half_cable(EndA, _, _),
+    half_cable(EndB, _, _).
 
 /* An X-cable is four halves (usually a stereo pair in audio).
-cable(Type) :-
-    half_cable(Type, _, _), half_cable(Type, _, _),
-    half_cable(Type, _, _), half_cable(Type, _, _).
+x_cable(EndA, EndB) :-
+    half_cable(EndA, _, _), half_cable(EndA, _, _),
+    half_cable(EndB, _, _), half_cable(EndB, _, _).
 
