@@ -20,14 +20,14 @@ device(korg-ms2000r, [
     midi-in, midi-thru, midi-out,
     left-quarter-in, right-quarter-in,
     left-quarter-out, right-quarter-out,
-    program-change-switch, keyboard-sustain,
+    program-change, keyboard-sustain,
     quarter-headphone, power]).
 device(nord-lead-ii, [
     pcmcia,
     midi-in, midi-thru, midi-out,
     left-quarter-out, right-quarter-out,
     quarter-out3, quarter-out4,
-    program-change-switch, keyboard-sustain,
+    program-change, keyboard-sustain,
     quarter-headphone, power]).
 device(roland-gr, [
     midi-in, midi-out, roland-midi-in,
@@ -41,7 +41,7 @@ device(yamaha-dtxtreme-iii, [
     midi-in, midi-out,
     stereo-quarter-in,
     left-quarter-out, right-quarter-out,
-    quarter-out1, quarter-out2,
+    quarter-out, quarter-out2,
     quarter-out3, quarter-out4,
     quarter-out5, quarter-out6,
     digital-out,
@@ -63,17 +63,17 @@ device(behringer-mixer, [
     quarter-in, quarter-in2, quarter-in3, quarter-in4,
     left-rca-in, right-rca-in,
     left-rca-out, right-rca-out,
-    aux-send1, aux-send2,
-    left-aux-return1, right-aux-return1,
+    aux-send, aux-send2,
+    left-aux-return, right-aux-return,
     left-aux-return2, right-aux-return2,
     quarter-headphone, power
 ]).
 device(digitech-processor, [
     midi-in, midi-out,
     left-quarter-out, right-quarter-out,
-    aux-send1, aux-send2,
-    left-aux-return1, right-aux-return1,
-    program-change-switch,
+    aux-send, aux-send2,
+    left-aux-return, right-aux-return,
+    program-change,
     quarter-headphone, power
 ]).
 
