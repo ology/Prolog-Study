@@ -5,7 +5,7 @@
 device(maudio-monitors, [
     left-quarter-in, right-quarter-in,
     left-rca-in, right-rca-in,
-    left-raw-wire-in, right-raw-wire-in,
+    left-wire-in, right-wire-in,
     mini-headphone, power
 ]).
 device(amplifier, [ left-quarter-in, power ]).
