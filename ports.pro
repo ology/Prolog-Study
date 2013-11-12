@@ -70,5 +70,5 @@ port(usb-large,   usb,   bi, female, large).
 port(usb-mini,    usb,   bi, female, mini).
 port(firewire400, fw,    bi, female, 400).
 port(firewire800, fw,    bi, female, 800).
-port(pcmcia,      flash, bi, female, i).
+port(pcmcia,      flash, bi, female, typei).
 
