@@ -39,11 +39,26 @@ full_cable(EndA, EndB) :-
 
 /* A Y-cable is three halves (usually a small adapter).
 y_cable(EndA, EndB) :-
-    half_cable(EndA, _, _), half_cable(EndA, _, _),
-    half_cable(EndB, _, _).
+    half_cable(EndA, male,  _),  half_cable(EndA, male,   _),
+    half_cable(EndB, male,  _).
+y_cable(EndA, EndB) :-
+    half_cable(EndA, male,   _), half_cable(EndA, male,   _),
+    half_cable(EndB, female, _).
+y_cable(EndA, EndB) :-
+    half_cable(EndA, female, _), half_cable(EndA, female, _),
+    half_cable(EndB, female, _).
+y_cable(EndA, EndB) :-
+    half_cable(EndA, female, _), half_cable(EndA, female, _),
+    half_cable(EndB, male,   _).
 
 /* An X-cable is four halves (usually a stereo pair in audio).
 x_cable(EndA, EndB) :-
-    half_cable(EndA, _, _), half_cable(EndA, _, _),
-    half_cable(EndB, _, _), half_cable(EndB, _, _).
+    half_cable(EndA, male, _), half_cable(EndA, male, _),
+    half_cable(EndB, male, _), half_cable(EndB, male, _).
+x_cable(EndA, EndB) :-
+    half_cable(EndA, male,   _), half_cable(EndA, male, _),
+    half_cable(EndB, female, _), half_cable(EndB, female, _).
+x_cable(EndA, EndB) :-
+    half_cable(EndA, female, _), half_cable(EndA, female, _),
+    half_cable(EndB, female, _), half_cable(EndB, female, _).
 
