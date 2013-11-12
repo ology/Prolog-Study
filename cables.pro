@@ -1,5 +1,5 @@
 /* Declaration of the cable record:
-cable(EndA, GenderA, SizeA, EndB, GenderB, SizeB)
+half_cable(End, Gender, Size)
 */
 
 /* MIDI */
@@ -16,7 +16,7 @@ half_cable(trs, mini,    male).
 half_cable(trs, mini,    female).
 
 /* Raw! */
-half_cable(raw, male).
+half_cable(raw, male, wire).
 
 /* XLR */
 half_cable(xlr, male,   normal).
