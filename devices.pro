@@ -11,11 +11,11 @@ device(maudio-monitors, [
 device(amplifier, [ left-quarter-in, power ]).
 device(sennheiser-headphones, [ stereo-quarter-in ]).
 device(macbook-pro, [
-    thumb-drive, pcmcia, usb-normal, firewire,
+    thumb-drive, pcmcia, usb-normal, firewire800,
     stereo-mini-in, stereo-mini-out,
     power]).
-device(external-drive, [ firewire ]).
-device(external-drive, [ usb-mini, firewire, power ]).
+device(external-drive, [ firewire400 ]).
+device(external-drive, [ usb-mini, firewire800, power ]).
 device(korg-ms2000r, [
     midi-in, midi-thru, midi-out,
     left-quarter-in, right-quarter-in,
@@ -47,7 +47,7 @@ device(yamaha-dtxtreme-iii, [
     digital-out,
     quarter-headphone, power
 ]).
-device(maudio-keybaord-interface, [
+device(maudio-keyboard-interface, [
     midi-in, midi-out, usb-large,
     stereo-quarter-in,
     quarter-in,
@@ -58,9 +58,9 @@ device(behringer-mixer, [
     left-quarter-out, right-quarter-out,
     quarter-out3, quarter-out4,
     left-xlr-out, right-xlr-out,
-    xlr-in1, xlr-in2, xlr-in3, xlr-in4,
+    xlr-in, xlr-in2, xlr-in3, xlr-in4,
     xlr-in4, xlr-in5, xlr-in6, xlr-in7,
-    quarter-in1, quarter-in2, quarter-in3, quarter-in4,
+    quarter-in, quarter-in2, quarter-in3, quarter-in4,
     left-rca-in, right-rca-in,
     left-rca-out, right-rca-out,
     aux-send1, aux-send2,
