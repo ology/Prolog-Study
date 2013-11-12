@@ -32,3 +32,18 @@ half_cable(usb,   male, large).
 half_cable(fw,    male, 400).
 half_cable(fw,    male, 800).
 half_cable(flash, male, typei).
+
+/* A full-cable is two halves.
+cable(Type) :-
+    half_cable(Type, _, _), half_cable(Type, _, _).
+
+/* A Y-cable is three halves (usually a small adapter).
+cable(Type) :-
+    half_cable(Type, _, _), half_cable(Type, _, _),
+    half_cable(Type, _, _).
+
+/* An X-cable is four halves (usually a stereo pair in audio).
+cable(Type) :-
+    half_cable(Type, _, _), half_cable(Type, _, _),
+    half_cable(Type, _, _), half_cable(Type, _, _).
+
