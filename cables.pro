@@ -10,10 +10,10 @@ half_cable(rca, male,   normal).
 half_cable(rca, female, normal).
 
 /* TRS */
-half_cable(trs, quarter, male).
-half_cable(trs, quarter, female).
-half_cable(trs, mini,    male).
-half_cable(trs, mini,    female).
+half_cable(trs, male,   quarter).
+half_cable(trs, female, quarter).
+half_cable(trs, male,   mini).
+half_cable(trs, female, mini).
 
 /* Raw! */
 half_cable(raw, male, wire).
