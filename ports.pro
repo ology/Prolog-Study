@@ -1,74 +1,74 @@
 /* Port (or "ports" for connecting cords) and their properties.
-port(Name_as_in_devices,    Type,   I/O,    Pole,   Size)
+port(Name_as_in_devices,    Type,   IO,    Pole,   Size)
 */
 
-/* MIDI connector */
-port(midi-in,               midi,   in,     mono,   normal).
-port(midi-out,              midi,   out,    mono,   normal).
-port(midi-thru,             midi,   thru,   mono,   normal).
+/* MIDI */
+port(midi-in,               midi,   in,     female, normal).
+port(midi-out,              midi,   out,    female, normal).
+port(midi-thru,             midi,   bi,     female, normal).
 
-/* RCA connector */
-port(left-rca-in,           rca,    in,     left,   normal).
-port(left-rca-out,          rca,    out,    left,   normal).
-port(right-rca-in,          rca,    in,     right,  normal).
-port(right-rca-out,         rca,    out,    right,  normal).
-port(digital-out,           rca,    out,    mono,   normal).
+/* RCA */
+port(male-rca-in,           rca,    in,     male,   normal).
+port(male-rca-out,          rca,    out,    male,   normal).
+port(female-rca-in,         rca,    in,     female, normal).
+port(female-rca-out,        rca,    out,    female, normal).
+port(digital-out,           rca,    out,    male,   normal).
 
-/* Quarter inch TRS */
-port(quarter-in,            trs,    in,     mono,   quarter).
-port(quarter-in2,           trs,    in,     mono,   quarter).
-port(quarter-in3,           trs,    in,     mono,   quarter).
-port(quarter-in4,           trs,    in,     mono,   quarter).
-port(quarter-out,           trs,    out,    mono,   quarter).
-port(left-quarter-in,       trs,    in,     left,   quarter).
-port(right-quarter-in,      trs,    in,     right   quarter).
-port(left-quarter-out,      trs,    out,    left,   quarter).
-port(right-quarter-out,     trs,    out,    right,  quarter).
-port(quarter-out2,          trs,    out,    mono,   quarter).
-port(quarter-out3,          trs,    out,    mono,   quarter).
-port(quarter-out4,          trs,    out,    mono,   quarter).
-port(quarter-out5,          trs,    out,    mono,   quarter).
-port(quarter-out6,          trs,    out,    mono,   quarter).
-port(aux-send1,             trs,    out,    mono,   quarter).
-port(aux-send2,             trs,    out,    mono,   quarter).
-port(left-aux-return,       trs,    in,     left,   quarter).
-port(right-aux-return,      trs,    in,     right,  quarter).
-port(left-aux-return2,      trs,    in,     left,   quarter).
-port(right-aux-return2,     trs,    in,     right,  quarter).
-port(stereo-quarter-in,     trs,    in,     stereo, quarter).
-port(stereo-quarter-out,    trs,    out,    stereo, quarter).
-port(stereo-mini-in,        trs,    in,     stereo, quarter).
-port(stereo-mini-out,       trs,    out,    stereo, quarter).
-port(program-change-switch, trs,    in,     mono,   quarter).
-port(keyboard-sustain,      trs,    in,     mono,   quarter).
+/* Quarter-inch TRS */
+port(left-quarter-in,       trs,    in,     female, quarter).
+port(left-quarter-out,      trs,    out,    female, quarter).
+port(right-quarter-in,      trs,    in,     female, quarter).
+port(right-quarter-out,     trs,    out,    female, quarter).
+port(quarter-in,            trs,    in,     female, quarter).
+port(quarter-out,           trs,    out,    female, quarter).
+port(quarter-in2,           trs,    in,     female, quarter).
+port(quarter-out2,          trs,    out,    female, quarter).
+port(quarter-in3,           trs,    in,     female, quarter).
+port(quarter-out3,          trs,    out,    female, quarter).
+port(quarter-in4,           trs,    in,     female, quarter).
+port(quarter-out4,          trs,    out,    female, quarter).
+port(quarter-out5,          trs,    out,    female, quarter).
+port(quarter-out6,          trs,    out,    female, quarter).
+port(aux-send,              trs,    out,    female, quarter).
+port(aux-send2,             trs,    out,    female, quarter).
+port(left-aux-return,       trs,    in,     female, quarter).
+port(right-aux-return,      trs,    in,     female, quarter).
+port(left-aux-return2,      trs,    in,     female, quarter).
+port(right-aux-return2,     trs,    in,     female, quarter).
+port(stereo-quarter-in,     trs,    in,     female, quarter).
+port(stereo-quarter-out,    trs,    out,    female, quarter).
+port(stereo-mini-in,        trs,    in,     female, mini).
+port(stereo-mini-out,       trs,    out,    female, mini).
+port(program-change,        trs,    in,     female, quarter).
+port(keyboard-sustain,      trs,    in,     female, quarter).
 
 /* Raw! */
-port(left-raw-wire-in,      raw,    in,     left,   wire).
-port(right-raw-wire-in,     raw,    in,     right,  wire).
-port(left-raw-wire-out,     raw,    out,    left,   wire).
-port(right-raw-wire-out,    raw,    out,    right,  wire).
+port(left-wire-in,          raw,    in,     female, wire).
+port(right-wire-in,         raw,    in,     female, wire).
+port(left-wire-out,         raw,    out,    female, wire).
+port(right-wire-out,        raw,    out,    female, wire).
 
 /* XLR */
-port(xlr-in,                xlr,    in,     mono,   normal).
-port(xlr-out,               xlr,    out,    mono,   normal).
-port(left-xlr-out,          xlr,    out,    left,   normal).
-port(right-xlr-out,         xlr,    out,    right,  normal).
-port(xlr-in2,               xlr,    in,     mono,   normal).
-port(xlr-in3,               xlr,    in,     mono,   normal).
-port(xlr-in4,               xlr,    in,     mono,   normal).
-port(xlr-in5,               xlr,    in,     mono,   normal).
-port(xlr-in6,               xlr,    in,     mono,   normal).
-port(xlr-in7,               xlr,    in,     mono,   normal).
+port(xlr-in,                xlr,    in,     female, normal).
+port(xlr-out,               xlr,    out,    female, normal).
+port(left-xlr-out,          xlr,    out,    female, normal).
+port(right-xlr-out,         xlr,    out,    female, normal).
+port(xlr-in2,               xlr,    in,     female, normal).
+port(xlr-in3,               xlr,    in,     female, normal).
+port(xlr-in4,               xlr,    in,     female, normal).
+port(xlr-in5,               xlr,    in,     female, normal).
+port(xlr-in6,               xlr,    in,     female, normal).
+port(xlr-in7,               xlr,    in,     female, normal).
 
 /* Miscelaneous */
-port(power,                 power,  in,     ac,     barrel).
+port(power,                 power,  in,     female, barrel).
 
 /* Storage */
-port(thumb-drive,           usb,    thru,   bi,     normal).
-port(usb-normal,            usb,    thru,   bi,     normal).
-port(usb-large,             usb,    thru,   bi,     large).
-port(usb-mini,              usb,    thru,   bi,     mini).
-port(firewire400,           fw,     in,     bi,     400).
-port(firewire800,           fw,     in,     bi,     800).
-port(pcmcia,                pcmcia, in,     bi,     i).
+port(thumb-drive,           usb,    bi,     female, normal).
+port(usb-normal,            usb,    bi,     female, normal).
+port(usb-large,             usb,    bi,     female, large).
+port(usb-mini,              usb,    bi,     female, mini).
+port(firewire400,           fw,     bi,     female, 400).
+port(firewire800,           fw,     bi,     female, 800).
+port(pcmcia,                pcmcia, bi,     female, i).
 
