@@ -1,4 +1,9 @@
-/* Declaration of the cable record: half_cable(End, Gender, Size) */
+/* Declaration of the cable record:
+  half_cable(EndA, Gender, Size)
+  full_cable(EndA, EndB)
+  y_cable(EndA, EndB)
+  x_cable(EndA, EndB)
+*/
 
 /* MIDI */
 half_cable(midi, male, normal).
@@ -21,20 +26,20 @@ half_cable(xlr, male,   normal).
 half_cable(xlr, female, normal).
 
 /* Exclude bogus cables like rca<=>usb etc. */
-full_cable(midi, X)  :- \+( X == midi ),  !, fail.
-full_cable(X, midi)  :- \+( X == midi ),  !, fail.
-full_cable(raw, X)   :- \+( X == raw ),   !, fail.
-full_cable(X, raw)   :- \+( X == raw ),   !, fail.
+full_cable(midi, X) :- \+( X == midi ), !, fail.
+full_cable(X, midi) :- \+( X == midi ), !, fail.
+full_cable(raw, X)  :- \+( X == raw ),  !, fail.
+full_cable(X, raw)  :- \+( X == raw ),  !, fail.
 
 /* A full-cable is two halves. */
 full_cable(EndA, EndB) :-
     half_cable(EndA, _, _), half_cable(EndB, _, _).
 
 /* Exclude bogus cables like rca+rca<=>usb+usb etc. */
-cable_pair(midi, X)  :- \+( X == midi ),  !, fail.
-cable_pair(X, midi)  :- \+( X == midi ),  !, fail.
-cable_pair(raw, X)   :- \+( X == raw ),   !, fail.
-cable_pair(X, raw)   :- \+( X == raw ),   !, fail.
+cable_pair(midi, X) :- \+( X == midi ), !, fail.
+cable_pair(X, midi) :- \+( X == midi ), !, fail.
+cable_pair(raw, X)  :- \+( X == raw ),  !, fail.
+cable_pair(X, raw)  :- \+( X == raw ),  !, fail.
 
 /* A cable end pair */
 cable_pair(EndA, male) :-
@@ -43,10 +48,10 @@ cable_pair(EndA, female) :-
     half_cable(EndA, female, _), half_cable(EndA, female, _).
 
 /* Exclude bogus cables like rca+rca<=>usb etc. */
-y_cable(midi, X)  :- \+( X == midi ),  !, fail.
-y_cable(X, midi)  :- \+( X == midi ),  !, fail.
-y_cable(raw, X)   :- \+( X == raw ),   !, fail.
-y_cable(X, raw)   :- \+( X == raw ),   !, fail.
+y_cable(midi, X) :- \+( X == midi ), !, fail.
+y_cable(X, midi) :- \+( X == midi ), !, fail.
+y_cable(raw, X)  :- \+( X == raw ),  !, fail.
+y_cable(X, raw)  :- \+( X == raw ),  !, fail.
 
 /* A Y-cable is three halves (usually a small adapter). */
 y_cable(EndA, EndB) :-
