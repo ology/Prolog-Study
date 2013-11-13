@@ -6,38 +6,25 @@ device(maudio-monitors, [
     left-quarter-in, right-quarter-in,
     left-rca-in, right-rca-in,
     left-wire-in, right-wire-in,
-    mini-headphone, power
 ]).
-device(amplifier, [ left-quarter-in, power ]).
-device(sennheiser-headphones, [ stereo-quarter-in ]).
-device(macbook-pro, [
-    thumb-drive, pcmcia, usb-normal, firewire800,
-    stereo-mini-in, stereo-mini-out,
-    power]).
-device(external-drive, [ firewire400 ]).
-device(external-drive, [ usb-mini, firewire800, power ]).
+device(amplifier, [ left-quarter-in ]).
+device(macbook-pro, [ stereo-mini-in, stereo-mini-out ]).
 device(korg-ms2000r, [
     midi-in, midi-thru, midi-out,
     left-quarter-in, right-quarter-in,
-    left-quarter-out, right-quarter-out,
-    program-change, keyboard-sustain,
-    quarter-headphone, power]).
+    left-quarter-out, right-quarter-out ]).
 device(nord-lead-ii, [
     pcmcia,
     midi-in, midi-thru, midi-out,
     left-quarter-out, right-quarter-out,
-    quarter-out3, quarter-out4,
-    program-change, keyboard-sustain,
-    quarter-headphone, power]).
+    quarter-out3, quarter-out4 ]).
 device(roland-gr, [
     midi-in, midi-out, roland-midi-in,
     left-quarter-in, right-quarter-in,
     left-quarter-out, right-quarter-out,
-    guitar-quarter-out,
-    power]).
+    guitar-quarter-out ]).
 device(godin-acs, [ roland-midi-out, guitar-quarter-out ]).
 device(yamaha-dtxtreme-iii, [
-    thumb-drive, usb-normal,
     midi-in, midi-out,
     stereo-quarter-in,
     left-quarter-out, right-quarter-out,
@@ -45,14 +32,12 @@ device(yamaha-dtxtreme-iii, [
     quarter-out3, quarter-out4,
     quarter-out5, quarter-out6,
     digital-out,
-    quarter-headphone, power
 ]).
 device(maudio-keyboard-interface, [
-    midi-in, midi-out, usb-large,
+    midi-in, midi-out,
     stereo-quarter-in,
     quarter-in,
     xlr-in,
-    power
 ]).
 device(behringer-mixer, [
     left-quarter-out, right-quarter-out,
@@ -66,14 +51,11 @@ device(behringer-mixer, [
     aux-send, aux-send2,
     left-aux-return, right-aux-return,
     left-aux-return2, right-aux-return2,
-    quarter-headphone, power
 ]).
 device(digitech-processor, [
     midi-in, midi-out,
     left-quarter-out, right-quarter-out,
     aux-send, aux-send2,
     left-aux-return, right-aux-return,
-    program-change,
-    quarter-headphone, power
 ]).
 
