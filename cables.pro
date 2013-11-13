@@ -31,6 +31,20 @@ half_cable(fw,    male, 400).
 half_cable(fw,    male, 800).
 half_cable(flash, male, typei).
 
+/* Restrict bogus cables like rca<=>usb etc. with fail. */
+full_cable(midi, X)  :- \+( X == midi ),  !, fail.
+full_cable(X, midi)  :- \+( X == midi ),  !, fail.
+full_cable(raw, X)   :- \+( X == raw ),   !, fail.
+full_cable(X, raw)   :- \+( X == raw ),   !, fail.
+full_cable(power, X) :- \+( X == power ), !, fail.
+full_cable(X, power) :- \+( X == power ), !, fail.
+full_cable(usb, X)   :- \+( X == usb ),   !, fail.
+full_cable(X, usb)   :- \+( X == usb ),   !, fail.
+full_cable(fw, X)    :- \+( X == fw ),    !, fail.
+full_cable(X, fw)    :- \+( X == fw ),    !, fail.
+full_cable(flash, X) :- \+( X == flash ), !, fail.
+full_cable(X, flash) :- \+( X == flash ), !, fail.
+
 /* A full-cable is two halves. */
 full_cable(EndA, EndB) :-
     half_cable(EndA, _, _), half_cable(EndB, _, _).
@@ -68,3 +82,8 @@ x_cable(EndA, EndB) :-
     cable_pair(EndA, female, female),
     cable_pair(EndB, female, female).
 
+/* Example queries:
+?- set_prolog_flag(toplevel_print_options, [quoted(true)]).
+?- findall(X0, half_cable(X0, male, _), X).
+X = [midi,rca,trs,trs,raw,xlr,power,usb,usb,usb,fw,fw,flash].
+*/
