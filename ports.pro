@@ -60,15 +60,3 @@ port(xlr-in5,       xlr, in,  female, normal).
 port(xlr-in6,       xlr, in,  female, normal).
 port(xlr-in7,       xlr, in,  female, normal).
 
-/* Miscelaneous */
-port(power, power, in, female, barrel).
-
-/* Storage */
-port(thumb-drive, usb,   bi, female, normal).
-port(usb-normal,  usb,   bi, female, normal).
-port(usb-large,   usb,   bi, female, large).
-port(usb-mini,    usb,   bi, female, mini).
-port(firewire400, fw,    bi, female, 400).
-port(firewire800, fw,    bi, female, 800).
-port(pcmcia,      flash, bi, female, typei).
-
