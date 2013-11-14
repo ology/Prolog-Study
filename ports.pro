@@ -63,8 +63,7 @@ port(xlr-in6,       xlr, in,  normal).
 port(xlr-in7,       xlr, in,  normal).
 
 /* Logic! */
-connects(Port, EndA, EndB) :-
-    port(Port, EndA, male, Size),
-    half_cable(EndA, _, Size),
-    half_cable(EndB, _, _).
+connects(Port, EndA, _) :-
+    port(Port, EndA, _, Size),
+    half_cable(EndA, male, Size).
 
