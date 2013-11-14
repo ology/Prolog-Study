@@ -1,5 +1,5 @@
 /* Ports (for connecting cords) and their properties.
-port(Name_on_devices, Type, IO, Size)
+    port(Name_on_devices, Type, IO, Size)
 */
 
 /* MIDI */
@@ -57,4 +57,12 @@ port(xlr-in4,       xlr, in,  normal).
 port(xlr-in5,       xlr, in,  normal).
 port(xlr-in6,       xlr, in,  normal).
 port(xlr-in7,       xlr, in,  normal).
+
+/* Load our cable dependencies. */
+['cables.pro'].
+
+/* Logic! */
+connects(Port, EndA) :-
+    half_cable(EndA, male, Size),
+    port(Port, EndA, _, Size).
 
