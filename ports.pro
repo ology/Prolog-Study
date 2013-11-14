@@ -2,6 +2,10 @@
     port(Name_on_devices, Type, IO, Size)
 */
 
+/* Load our cable dependencies.
+['cables.pro'].
+*/
+
 /* MIDI */
 port(midi-in,   midi, in,  normal).
 port(midi-out,  midi, out, normal).
@@ -57,9 +61,6 @@ port(xlr-in4,       xlr, in,  normal).
 port(xlr-in5,       xlr, in,  normal).
 port(xlr-in6,       xlr, in,  normal).
 port(xlr-in7,       xlr, in,  normal).
-
-/* Load our cable dependencies. */
-['cables.pro'].
 
 /* Logic! */
 connects(Port, EndA, EndB) :-
