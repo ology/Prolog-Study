@@ -1,12 +1,17 @@
 /* Music studio device <=> cable cross-referencer */
 /* TODO Use DBI to declare this, instead of in-line hardcoding. */
 
+/* Load deps
+consult('lists.pro').
+consult('ports.pro').
+consult('cables.pro').
+*/
+
 /* Declaration of the equipment record: */
 device(maudio-monitors, [
     left-quarter-in, right-quarter-in,
     left-rca-in, right-rca-in,
-    left-wire-in, right-wire-in,
-]).
+    left-wire-in, right-wire-in ]).
 device(amplifier, [ left-quarter-in ]).
 device(macbook-pro, [ stereo-mini-in, stereo-mini-out ]).
 device(korg-ms2000r, [
@@ -31,14 +36,12 @@ device(yamaha-dtxtreme-iii, [
     quarter-out, quarter-out2,
     quarter-out3, quarter-out4,
     quarter-out5, quarter-out6,
-    digital-out,
-]).
+    digital-out ]).
 device(maudio-keyboard-interface, [
     midi-in, midi-out,
     stereo-quarter-in,
     quarter-in,
-    xlr-in,
-]).
+    xlr-in ]).
 device(behringer-mixer, [
     left-quarter-out, right-quarter-out,
     quarter-out3, quarter-out4,
@@ -50,12 +53,24 @@ device(behringer-mixer, [
     left-rca-out, right-rca-out,
     aux-send, aux-send2,
     left-aux-return, right-aux-return,
-    left-aux-return2, right-aux-return2,
-]).
+    left-aux-return2, right-aux-return2 ]).
 device(digitech-processor, [
     midi-in, midi-out,
     left-quarter-out, right-quarter-out,
     aux-send, aux-send2,
-    left-aux-return, right-aux-return,
-]).
+    left-aux-return, right-aux-return ]).
+
+/* Rule: Devices connect their ports with cables
+device_connects(Device, Ports, Cable) :-
+    [H|T] = Ports,
+    port(H, EndA, _, Size),
+    full_cable(Cable, male, Size, _).
+device_connects(Device, Ports, Cable) :-
+    [_|T] = Ports,
+    device_connects(Device, T, Cable).
+*/
+
+show_ports(Device) :-
+    device(Device, Ports),
+    print_list(Ports).
 
