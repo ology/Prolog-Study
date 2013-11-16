@@ -2,14 +2,14 @@
 :- ensure_loaded('ports.pro').
 :- ensure_loaded('cables.pro').
 /* ^^^ Load dependencies ^^^ */
-/*********************************************************************
+/********************************************************************\
 
 Program: Music studio device <=> Cable cross-referencer
 Language: Prolog
 Author: Gene Boggs
 Start date: 2013-11-09
 
-*********************************************************************/
+\********************************************************************/
 
 /* Facts: The equipment records - device(Name, Ports) */
 /* TODO Use DBI to declare these, instead of in-line hardcoding. */
