@@ -5,7 +5,7 @@ print_list(List) :-
     write_ln(H),
     print_list(T).
 
-/* */
+/* Grow a list */
 append([], List, List).
 append([H|Tail], X, [H|NewTail]) :-
     append(Tail, X, NewTail).
@@ -14,6 +14,6 @@ append([H|Tail], X, [H|NewTail]) :-
 reverse([],[]).
 /* To reverse a non-empty list, 1st reverse the tail, append the result to [H]. */
 reverse([H|Tail], Result) :-
-    reverse(Tail, Tailreversed),
-    append(Tailreversed, [H], Result).
+    reverse(Tail, Reversed),
+    append(Reversed, [H], Result).
 
