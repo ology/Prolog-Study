@@ -5,7 +5,17 @@ start(s).
 final(f1).
 final(f2).
 
-/* */
+/*          
+          /--\
+ a +-----| q1 |
+   |      \__/
+  /-\ 
+ | s |
+  \_/
+   |     /--\
+ b +----| q2 |
+         \__/
+*/
 delta(s,a,q1).
 delta(s,b,q2).
 delta(q1,b,s).
