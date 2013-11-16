@@ -65,6 +65,9 @@ device(digitech-processor, [
     aux-send, aux-send2,
     left-aux-return, right-aux-return ]).
 
+/* Rule: Devices connect to other devices! */
+connects(DeviceA, DeviceB).
+
 /* Rule: Devices connect their ports with cables */
 /* device_cable/2 */
 device_cable(Device, Cable) :-
