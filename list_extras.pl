@@ -1,4 +1,4 @@
-:- module(list_extras, [print_list/1]) 
+:- module(list_extras, [print_list/1]).
 
 /* Print a list vertically */
 print_list([]).
