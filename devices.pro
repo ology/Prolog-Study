@@ -11,7 +11,7 @@ Start date: 2013-11-09
 
 *********************************************************************/
 
-/* Facts: The equipment records */
+/* Facts: The equipment records - device(Name, Ports) */
 /* TODO Use DBI to declare these, instead of in-line hardcoding. */
 device(maudio-monitors, [
     left-quarter-in, right-quarter-in,
