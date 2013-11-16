@@ -1,11 +1,10 @@
 /* Music studio device <=> cable cross-referencer */
 /* TODO Use DBI to declare this, instead of in-line hardcoding. */
 
-/* Load deps
-consult('lists.pro').
-consult('ports.pro').
-consult('cables.pro').
-*/
+/* Load deps */
+use_module(list_extras).
+%consult('ports.pro').
+%consult('cables.pro').
 
 /* Declaration of the equipment record: */
 device(maudio-monitors, [
