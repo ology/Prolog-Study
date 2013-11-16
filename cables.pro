@@ -34,6 +34,10 @@ full_cable(X, raw)  :- \+( X == raw ),  !, fail.
 /* A full-cable is two halves. */
 full_cable(EndA, EndB) :-
     half_cable(EndA, _, _), half_cable(EndB, _, _).
+/* A full-cable can also be called with properties specified */
+full_cable(EndA, Gender, Size, EndB) :-
+    half_cable(EndA, Gender, Size),
+    half_cable(EndB, _, _).
 
 /* Exclude bogus cables like rca+rca<=>usb+usb etc. */
 cable_pair(midi, X) :- \+( X == midi ), !, fail.
