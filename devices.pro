@@ -2,11 +2,16 @@
 :- ensure_loaded('ports.pro').
 :- ensure_loaded('cables.pro').
 /* ^^^ Load dependencies ^^^ */
+/*********************************************************************
 
-/* Music studio device <=> cable cross-referencer */
-/* TODO Use DBI to declare this, instead of in-line hardcoding. */
+Program: Music studio device <=> Cable cross-referencer
+Author: Gene Boggs
+Start date: 11/2013
 
-/* Declaration of the equipment records */
+*********************************************************************/
+
+/* Facts: The equipment records */
+/* TODO Use DBI to declare these, instead of in-line hardcoding. */
 device(maudio-monitors, [
     left-quarter-in, right-quarter-in,
     left-rca-in, right-rca-in,
@@ -69,7 +74,7 @@ device_cable(Device, Cable) :-
     device(Device, [_|T]),
     device_cable(Device, T, Cable).
 
-/* Show the ports for the given device. */
+/* Procedure: Show the ports for the given device. */
 show_ports(Device) :-
     device(Device, Ports),
     print_list(Ports).
