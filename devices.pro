@@ -1,12 +1,10 @@
 :- use_module(list_extras, [print_list/1]).
+:- ensure_loaded('ports.pro').
+:- ensure_loaded('cables.pro').
+/* ^^^ Load dependencies ^^^ */
 
 /* Music studio device <=> cable cross-referencer */
 /* TODO Use DBI to declare this, instead of in-line hardcoding. */
-
-/* Load deps */
-% XXX These don't import rules into the workspace. What the?
-ensure_loaded('ports.pro').
-ensure_loaded('cables.pro').
 
 /* Declaration of the equipment records */
 device(maudio-monitors, [
