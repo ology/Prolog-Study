@@ -1,5 +1,5 @@
 :- module(list_extras, [print_list/1]).
-/* ^^^ Functor export ^^^
+/* ^^^ Functor export ^^^ */
 /*********************************************************************
 
 Program: Handy list functors
