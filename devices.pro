@@ -24,7 +24,6 @@ device(korg-ms2000r, [
     left-quarter-in, right-quarter-in,
     left-quarter-out, right-quarter-out ]).
 device(nord-lead-ii, [
-    pcmcia,
     midi-in, midi-thru, midi-out,
     left-quarter-out, right-quarter-out,
     quarter-out3, quarter-out4 ]).
@@ -32,8 +31,8 @@ device(roland-gr, [
     midi-in, midi-out, roland-midi-in,
     left-quarter-in, right-quarter-in,
     left-quarter-out, right-quarter-out,
-    guitar-quarter-out ]).
-device(godin-acs, [ roland-midi-out, guitar-quarter-out ]).
+    quarter-out ]).
+device(godin-acs, [ roland-midi-out, quarter-out ]).
 device(yamaha-dtxtreme-iii, [
     midi-in, midi-out,
     stereo-quarter-in,
@@ -64,6 +63,7 @@ device(digitech-processor, [
     left-quarter-out, right-quarter-out,
     aux-send, aux-send2,
     left-aux-return, right-aux-return ]).
+device(microphone, [ xlr-out ]).
 
 /* Procedure: Show the ports for the given device. */
 show_ports(Device) :-
@@ -83,5 +83,8 @@ device_cable(Device, Cable, [_|Tail]) :-
     device_cable(Device, Cable, Tail).
 
 /* Rule: Devices connect to other devices! */
-connects(DeviceA, DeviceB).
+/* TODO Handle cable male-female */
+connects(DeviceA, DeviceB) :-
+    device_cable(DeviceA, Cable),
+    device_cable(DeviceB, Cable).
 
