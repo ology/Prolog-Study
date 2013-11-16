@@ -1,4 +1,12 @@
-/* Declaration of the cable record:
+/*********************************************************************
+
+Program: Music studio cable definitions
+Language: Prolog
+Author: Gene Boggs
+
+*********************************************************************/
+
+/* 
   half_cable(EndA, Gender, Size)
   full_cable(EndA, EndB)
   y_cable(EndA, EndB)

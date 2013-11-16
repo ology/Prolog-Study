@@ -1,10 +1,15 @@
-/* Ports (for connecting cords) and their properties.
-    port(Name_on_devices, Type, IO, Size)
-*/
+:- ensure_loaded('cables.pro').
+/* ^^^ Load dependencies ^^^ */
+/*********************************************************************
 
-/* Load our cable dependencies.
-['cables.pro'].
-*/
+Program: Music studio device port definitions.
+Language: Prolog
+Author: Gene Boggs
+Start date: 2013-11-09
+
+*********************************************************************/
+
+/* port(Name_on_devices, Type, IO, Size) */
 
 /* MIDI */
 port(midi-in,   midi, in,  normal).

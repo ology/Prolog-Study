@@ -5,8 +5,9 @@
 /*********************************************************************
 
 Program: Music studio device <=> Cable cross-referencer
+Language: Prolog
 Author: Gene Boggs
-Start date: 11/2013
+Start date: 2013-11-09
 
 *********************************************************************/
 
