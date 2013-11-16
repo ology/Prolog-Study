@@ -2,7 +2,7 @@
 /* TODO Use DBI to declare this, instead of in-line hardcoding. */
 
 /* Load deps */
-use_module(list_extras).
+use_module(list_extras, [print_list/1]).
 %consult('ports.pro').
 %consult('cables.pro').
 
