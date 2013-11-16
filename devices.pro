@@ -65,8 +65,10 @@ device(digitech-processor, [
     aux-send, aux-send2,
     left-aux-return, right-aux-return ]).
 
-/* Rule: Devices connect to other devices! */
-connects(DeviceA, DeviceB).
+/* Procedure: Show the ports for the given device. */
+show_ports(Device) :-
+    device(Device, Ports),
+    print_list(Ports).
 
 /* Rule: Devices connect their ports with cables */
 /* device_cable/2 */
@@ -80,8 +82,6 @@ device_cable(_, Cable, [Head|_]) :-
 device_cable(Device, Cable, [_|Tail]) :-
     device_cable(Device, Cable, Tail).
 
-/* Procedure: Show the ports for the given device. */
-show_ports(Device) :-
-    device(Device, Ports),
-    print_list(Ports).
+/* Rule: Devices connect to other devices! */
+connects(DeviceA, DeviceB).
 
