@@ -67,13 +67,16 @@ device(digitech-processor, [
 
 /* Rule: Devices connect their ports with cables
 */
+/* device_cable/2 */
 device_cable(Device, Cable) :-
-    device(Device, [H|_]),
-    port(H, Cable, _, Size),
+    device(Device, Ports),
+    device_cable(Device, Cable, Ports).
+/* device_cable/3 */
+device_cable(_, Cable, [Head|_]) :-
+    port(Head, Cable, _, Size),
     full_cable(Cable, male, Size, _).
-device_cable(Device, Cable) :-
-    device(Device, [_|T]),
-    device_cable(Device, T, Cable).
+device_cable(Device, Cable, [_|Tail]) :-
+    device_cable(Device, Cable, Tail).
 
 /* Procedure: Show the ports for the given device. */
 show_ports(Device) :-
