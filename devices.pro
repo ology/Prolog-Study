@@ -1,12 +1,14 @@
+:- use_module(list_extras, [print_list/1]).
+
 /* Music studio device <=> cable cross-referencer */
 /* TODO Use DBI to declare this, instead of in-line hardcoding. */
 
 /* Load deps */
-use_module(list_extras, [print_list/1]).
-%consult('ports.pro').
-%consult('cables.pro').
+% XXX These don't import rules into the workspace. What the?
+ensure_loaded('ports.pro').
+ensure_loaded('cables.pro').
 
-/* Declaration of the equipment record: */
+/* Declaration of the equipment records */
 device(maudio-monitors, [
     left-quarter-in, right-quarter-in,
     left-rca-in, right-rca-in,
@@ -60,15 +62,16 @@ device(digitech-processor, [
     left-aux-return, right-aux-return ]).
 
 /* Rule: Devices connect their ports with cables
-device_connects(Device, Ports, Cable) :-
-    [H|T] = Ports,
-    port(H, EndA, _, Size),
-    full_cable(Cable, male, Size, _).
-device_connects(Device, Ports, Cable) :-
-    [_|T] = Ports,
-    device_connects(Device, T, Cable).
 */
+device_cable(Device, Cable) :-
+    device(Device, [H|_]),
+    port(H, Cable, _, Size),
+    full_cable(Cable, male, Size, _).
+device_cable(Device, Cable) :-
+    device(Device, [_|T]),
+    device_cable(Device, T, Cable).
 
+/* Show the ports for the given device. */
 show_ports(Device) :-
     device(Device, Ports),
     print_list(Ports).
