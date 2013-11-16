@@ -1,10 +1,10 @@
-/********************************************************************\
-
-Program: Music studio cable definitions
-Language: Prolog
-Author: Gene Boggs
-
-\********************************************************************/
+ /*-----------------------------------------------------------------*\
+|
+| Program: Music studio cable definitions
+| Language: Prolog
+| Author: Gene Boggs
+|
+ \*-----------------------------------------------------------------*/
 
 /* 
   half_cable(EndA, Gender, Size)

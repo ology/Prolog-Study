@@ -2,14 +2,14 @@
 :- ensure_loaded('ports.pro').
 :- ensure_loaded('cables.pro').
 /* ^^^ Load dependencies ^^^ */
-/********************************************************************\
 
-Program: Music studio device <=> Cable cross-referencer
-Language: Prolog
-Author: Gene Boggs
-Start date: 2013-11-09
-
-\********************************************************************/
+ /*-----------------------------------------------------------------*\
+|
+|  Program: Music studio device <=> Cable cross-referencer
+|  Language: Prolog
+|  Author: Gene Boggs
+|
+ \*-----------------------------------------------------------------*/
 
 /* Facts: The equipment records - device(Name, Ports) */
 /* TODO Use DBI to declare these, instead of in-line hardcoding. */
@@ -65,8 +65,7 @@ device(digitech-processor, [
     aux-send, aux-send2,
     left-aux-return, right-aux-return ]).
 
-/* Rule: Devices connect their ports with cables
-*/
+/* Rule: Devices connect their ports with cables */
 /* device_cable/2 */
 device_cable(Device, Cable) :-
     device(Device, Ports),
