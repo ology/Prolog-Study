@@ -12,9 +12,11 @@
 /* port(Name_on_devices, Type, IO, Size) */
 
 /* MIDI */
-port(midi-in,   midi, in,  normal).
-port(midi-out,  midi, out, normal).
-port(midi-thru, midi, bi,  normal).
+port(midi-in,           midi, in,  normal).
+port(midi-out,          midi, out, normal).
+port(midi-thru,         midi, bi,  normal).
+port(roland-midi-in,    midi, in,  normal).
+port(roland-midi-out,   midi, out, normal).
 
 /* RCA */
 port(female-rca-in,  rca, in,  normal).
