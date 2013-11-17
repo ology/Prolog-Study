@@ -16,5 +16,5 @@ result_set(Result) :-
 /* Queries:
   ensure_loaded('odbc.pro').
   open_db.
-  result_set(Rs)
+  result_set(Rs).
 */
