@@ -13,3 +13,8 @@ open_db :-
 result_set(Result) :-
     odbc_query(localhost, 'SELECT name FROM testers', Result).
 
+/* Queries:
+  ensure_loaded('odbc.pro').
+  open_db.
+  result_set(Rs)
+*/
