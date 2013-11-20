@@ -1,6 +1,3 @@
-:- use_module(library(persistency)).
-/* ^^^ Dependencies ^^^ */
-
  /*-----------------------------------------------------------------*\
 
    Program: Handy database functions
