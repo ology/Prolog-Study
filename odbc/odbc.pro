@@ -10,11 +10,11 @@
 open_db :-
     odbc_connect(myodbc3, _, [ alias(localhost), open(once) ]).
 
-result_set(Result) :-
-    odbc_query(localhost, 'SELECT name FROM testers', Result).
+fetch(Results, Sql) :-
+    odbc_query(localhost, Sql, Results).
 
 /* Queries:
-  ensure_loaded('odbc.pro').
-  open_db.
-  result_set(Rs).
+ensure_loaded('odbc.pro').
+open_db.
+fetch(R, 'SELECT id,name,modified FROM testers').
 */
