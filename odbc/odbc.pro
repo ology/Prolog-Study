@@ -8,7 +8,7 @@
 
 /* DB connection defined in odbc.ini */
 open_db :-
-    odbc_connect(myodbc5, _, [ alias(localhost), open(once) ]).
+    odbc_connect(myodbc3, _, [ alias(localhost), open(once) ]).
 
 fetch(Results, Sql) :-
     odbc_query(localhost, Sql, Results).
