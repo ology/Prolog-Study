@@ -17,11 +17,13 @@ fetch(Result, Sql) :-
 /* Assert results. */
 fetch_facts(Result, Sql) :-
     odbc_query(localhost, Sql, Result),
-    assertz(Result).
+    assertz(Result),
+    fail.
 
 /* Queries:
 ensure_loaded('odbc.pro').  open_db.
 %fetch(R, 'SELECT * FROM testers').
 fetch_facts(R, 'SELECT id, name FROM testers').
+listing.
 */
 
