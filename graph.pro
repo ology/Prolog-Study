@@ -1,4 +1,4 @@
-/* Directed graph with handy edge rules example:
+/* Directed graph with edge rules example:
   a b c d e f g
 a   1       1
 b     1
@@ -33,12 +33,14 @@ path(Node1, Node2) :-
 path(Node1, NodeN) :-
     edge(Node1, NodeI),
     path(NodeI, NodeN).
+
+/* Show all the defined paths. */
 show_paths(X, Y) :-
     path(X, Y),
     write(Y), nl,
     fail.
 
-/* Does a chain of paths exist? */
+/* Does a chain of edges exist? */
 chain(X,Y,[X,Y]) :- edge(X,Y).
 chain(X,Y,[X|Z]) :- edge(X,I), path(I,Y), chain(I,Y,Z).
 chain(X,Y,[]).
