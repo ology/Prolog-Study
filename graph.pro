@@ -21,13 +21,13 @@ edge(f, e).
 edge(f, g).
 edge(g, c).
 
-/* */
+/* Show all the declared edges. */
 show_edges(X, Y) :-
     edge(X, Y),
     write(Y), nl,
     fail.
 
-/* */
+/* A path exists if nodes share an edge. */
 path(Node1, Node2) :-
     edge(Node1, Node2).
 path(Node1, NodeN) :-
@@ -38,11 +38,12 @@ show_paths(X, Y) :-
     write(Y), nl,
     fail.
 
-/* */
+/* Does a chain of paths exist? */
 chain(X,Y,[X,Y]) :- edge(X,Y).
 chain(X,Y,[X|Z]) :- edge(X,I), path(I,Y), chain(I,Y,Z).
 chain(X,Y,[]).
-/*
+/* Example query:
  ?- chain(a,d,X).
- X = [a, b, c, d] .
+ X = [a, b, c, d] ;
+ ...
 */
