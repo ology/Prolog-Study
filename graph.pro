@@ -41,9 +41,13 @@ show_paths(X, Y) :-
     fail.
 
 /* Does a chain of edges exist? */
-chain(X,Y,[X,Y]) :- edge(X,Y).
-chain(X,Y,[X|Z]) :- edge(X,I), path(I,Y), chain(I,Y,Z).
-chain(X,Y,[]).
+chain(X,Y,[X,Y]) :-
+    edge(X,Y).
+chain(X,Y,[X|Z]) :-
+    edge(X,I),
+    path(I,Y),
+    chain(I,Y,Z).
+chain(X,Y,[]).  % Base case: 2 vertices can have no edge
 /* Example query:
  ?- chain(a,d,X).
  X = [a, b, c, d] ;
