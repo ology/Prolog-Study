@@ -1,6 +1,13 @@
-/* Directed graph inspection */
-
-/* Directed graph with handy edge rules example: */
+/* Directed graph with handy edge rules example:
+  a b c d e f g
+a   1       1
+b     1
+c       1 1
+d 
+e       1
+f     1   1   1
+g     1
+*/
 edge(a, b).
 edge(a, f).
 edge(b, c).
