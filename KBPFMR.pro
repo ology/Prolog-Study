@@ -18,3 +18,21 @@ key_member(dmaj,dmaj,tonic).
 key_member(dmaj,amaj,dominant).
 key_member(dmaj,gmaj,subdominant).
 
+% "What keys have a Dmaj chord as dominant?"
+key_member(X,dmaj,dominant).
+
+% "What are the keys that have a Gmaj chord as dominant?"
+key_member(X,gmaj,dominant).
+
+% "What keys contain a Gmaj chord?"
+key_member(X,gmaj,_).
+
+% "What key can modulate from Cmaj with Gmaj as pivot?"
+key_member(X,gmaj,Function), Key \= cmaj.
+
+% "What key can modulate to Cmin through a pivot chord?"
+key_member(Key,Chord,_), key_member(cmin,Chord,_), Key \= cmin.
+
+% "What keys have pivot chords that are dominant in the new key?"
+key_member(Key1,Chord,_), key_member(Key2,Chord,dominant), Key1 \= Key2.
+
