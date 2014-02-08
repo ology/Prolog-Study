@@ -24,6 +24,12 @@ pivot_chord(Chord,Key1,Key2) :-
     Function1 \= Function2,
     Key1 \= Key2.
 
+
+borrowed_chord(Chord,Key1,Key2,Function) :-
+    key_member(Key1,Chord,Function),
+    key_member(Key2,Chord,Function),
+    Key1 \= Key2.
+
 /*
 % "What keys have a Dmaj chord as dominant?"
 key_member(X,dmaj,dominant).
@@ -45,5 +51,10 @@ key_member(Key1,Chord,_), key_member(Key2,Chord,dominant), Key1 \= Key2.
 
 % "What keys can be modulated to, from Cmaj, using Gmaj as pivot?"
 pivot_chord(gmaj,cmaj,Key2).
+
+borrowed_chord(Chord,Key1,Key2,Function).
+
+% "What is the function of Gmaj borrowed between Cmaj & Cmin?
+borrowed_chord(gmaj,cmaj,cmin,Function).
 
 */
