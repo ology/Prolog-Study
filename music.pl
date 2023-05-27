@@ -132,46 +132,6 @@ key_function(min, min,   r_v,   dominant).
 key_function(min, maj,   r_VI,  submediant).
 key_function(min, maj,   r_VII, subtonic).
 
-roman(r_I).
-roman(r_ii).
-roman(r_iii).
-roman(r_IV).
-roman(r_V).
-roman(r_vi).
-roman(r_vii).
-% minor
-roman(r_i).
-roman(r_ii).
-roman(r_III).
-roman(r_iv).
-roman(r_v).
-roman(r_VI).
-roman(r_VII).
-
-function(tonic).
-function(supertonic).
-function(mediant).
-function(subdominant).
-function(dominant).
-function(submediant).
-function(leading_tone). % major key
-function(subtonic).     % minor key
-
-chord(maj).
-chord(min).
-chord(dim).
-
-key(maj).
-key(min).
-
-note(c).
-note(d).
-note(e).
-note(f).
-note(g).
-note(a).
-note(b).
-
 scale(c, maj, [c, d,  e,  f,  g,  a,  b]).
 scale(c, min, [c, d,  ef, f,  g,  af, bf]).
 scale(d, maj, [d, e,  gf, g,  a,  b,  df]).
