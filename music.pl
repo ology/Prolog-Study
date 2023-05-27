@@ -172,8 +172,20 @@ note(g).
 note(a).
 note(b).
 
-scale(c, maj, [c, d, e, f, g, a, b]).
-scale(c, min, [c, d, ef, f, g, af, bf]).
+scale(c, maj, [c, d,  e,  f,  g,  a,  b]).
+scale(c, min, [c, d,  ef, f,  g,  af, bf]).
+scale(d, maj, [d, e,  gf, g,  a,  b,  df]).
+scale(d, min, [d, e,  f,  g,  a,  bf, c]).
+scale(e, maj, [e, gf, af, a,  b,  df, ef]).
+scale(e, min, [e, gf, g,  a,  b,  c,  d]).
+scale(f, maj, [f, g,  a,  bf, c,  d,  e]).
+scale(f, min, [f, g,  af, bf, c,  df, ef]).
+scale(g, maj, [g, a,  b,  c,  d,  e,  gf]).
+scale(g, min, [g, a,  bf, c,  d,  ef, f]).
+scale(a, maj, [a, b,  df, d,  e,  gf, af]).
+scale(a, min, [a, b,  c,  d,  e,  f,  g]).
+scale(b, maj, [b, df, ef, e,  gf, af, bf]).
+scale(b, min, [b, df, d,  e,  gf, g,  a]).
 
 in_scale(X, N, K) :- scale(N, K, L), member(X, L).
 
