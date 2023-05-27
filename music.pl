@@ -186,12 +186,12 @@ scale(b, maj, [ b, df, ef, e,  gf, af, bf ]).
 scale(b, min, [ b, df, d,  e,  gf, g,  a  ]).
 
 in_scale(X, Note, Key) :-
-    scale(Note, Key, L),
-    member(X, L).
+    scale(Note, Key, Notes),
+    member(X, Notes).
 
 print_scale(Note, Key) :-
-    scale(Note, Key, L),
-    show_records(L).
+    scale(Note, Key, Notes),
+    show_records(Notes).
 
 show_records([]).
 show_records([A|B]) :-
