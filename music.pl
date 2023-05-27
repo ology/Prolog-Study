@@ -132,6 +132,16 @@ key_function(min, min,   r_v,   dominant).
 key_function(min, maj,   r_VI,  submediant).
 key_function(min, maj,   r_VII, subtonic).
 
+mode(maj,        [r_I, r_ii, r_iii, r_IV, r_V, r_vi, r_vii]).
+mode(ionian,     [r_I, r_ii, r_iii, r_IV, r_V, r_vi, r_vii]).
+mode(dorian,     [r_i, r_ii, r_III, r_IV, r_v, r_vi, r_VII]).
+mode(phrygian,   [r_i, r_II, r_III, r_iv, r_v, r_VI, r_vii]).
+mode(lydian,     [r_I, r_II, r_iii, r_iv, r_V, r_vi, r_vii]).
+mode(mixolydian, [r_I, r_ii, r_iii, r_IV, r_v, r_vi, r_VII]).
+mode(min,        [r_i, r_ii, r_III, r_iv, r_v, r_VI, r_VII]).
+mode(aeolian,    [r_i, r_ii, r_III, r_iv, r_v, r_VI, r_VII]).
+mode(locrian,    [r_i, r_II, r_iii, r_iv, r_V, r_VI, r_vii]).
+
 scale(c, maj, [c, d,  e,  f,  g,  a,  b]).
 scale(c, min, [c, d,  ef, f,  g,  af, bf]).
 scale(d, maj, [d, e,  gf, g,  a,  b,  df]).
@@ -159,5 +169,4 @@ show_records([]).
 show_records([A|B]) :-
     format('Note = ~w~n', A),
     show_records(B).
-
 
