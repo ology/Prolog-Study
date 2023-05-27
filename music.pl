@@ -170,7 +170,15 @@ in_roman_mode(X, Mode) :-
     roman_mode(Mode, L),
     member(X, L).
 
-mode(maj,        [maj, min, min, maj, maj, min, dim]).
+mode(maj, [
+    meta{ chord:maj, roman:r_I,   function:tonic },
+    meta{ chord:min, roman:r_ii,  function:supertonic },
+    meta{ chord:min, roman:r_iii, function:mediant },
+    meta{ chord:maj, roman:r_IV,  function:subdominant },
+    meta{ chord:maj, roman:r_V,   function:dominant },
+    meta{ chord:min, roman:r_vi,  function:submediant },
+    meta{ chord:dim, roman:r_vii, function:leading_tone }
+]).
 mode(ionian,     [maj, min, min, maj, maj, min, dim]).
 mode(dorian,     [min, min, maj, maj, min, dim, maj]).
 mode(phrygian,   [min, maj, maj, min, dim, maj, min]).
