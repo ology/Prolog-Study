@@ -142,6 +142,13 @@ roman_mode(min,        [r_i, r_ii, r_III, r_iv, r_v, r_VI, r_VII]).
 roman_mode(aeolian,    [r_i, r_ii, r_III, r_iv, r_v, r_VI, r_VII]).
 roman_mode(locrian,    [r_i, r_II, r_iii, r_iv, r_V, r_VI, r_vii]).
 
+get_roman_mode(Note, Key, Mode) :-
+    scale(Base, Key, L1),
+    nth0(Idx, L1, Note),
+    mode(Mode, L2),
+    nth0(Idx, L2, X),
+    format('Base: ~w, Mode: ~w, Note: ~w, Chord: ~w~n', [Base, Mode, Note, X]).
+
 in_roman_mode(X, Mode) :-
     roman_mode(Mode, L),
     member(X, L).
