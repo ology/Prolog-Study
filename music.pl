@@ -148,7 +148,6 @@ get_roman_mode(X, Note, Key, Mode) :-
     mode(Mode, L2),
     nth0(Idx, L2, Y),
     X = [Base, Mode, Note, Y].
-%    format('Base: ~w, Mode: ~w, Note: ~w, Chord: ~w~n', [Base, Mode, Note, X]).
 
 in_roman_mode(X, Mode) :-
     roman_mode(Mode, L),
@@ -170,7 +169,6 @@ get_mode(X, Note, Key, Mode) :-
     mode(Mode, L2),
     nth0(Idx, L2, Y),
     X = [Base, Mode, Note, Y].
-%    format('Base: ~w, Mode: ~w, Note: ~w, Chord: ~w~n', [Base, Mode, Note, X]).
 
 scale(c, maj, [c, d,  e,  f,  g,  a,  b]).
 scale(c, min, [c, d,  ef, f,  g,  af, bf]).
