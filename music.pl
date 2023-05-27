@@ -172,11 +172,12 @@ note(g).
 note(a).
 note(b).
 
-c_scale([c, d, e, f, g, a, b]).
+scale(c, maj, [c, d, e, f, g, a, b]).
+scale(c, min, [c, d, ef, f, g, af, bf]).
 
-in_scale(X) :- c_scale(L), member(X, L).
+in_scale(X) :- scale(c, maj, L), member(X, L).
 
-print_scale() :- c_scale(L), show_records(L).
+print_scale(N, K) :- scale(N, K, L), show_records(L).
 
 show_records([]).
 show_records([A|B]) :-
