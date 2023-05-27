@@ -179,7 +179,7 @@ mode(maj, [
     meta{ chord:min, roman:r_vi,  function:submediant },
     meta{ chord:dim, roman:r_vii, function:leading_tone }
 ]).
-mode(ionian,     [maj, min, min, maj, maj, min, dim]).
+mode(ionian, Meta) :- mode(maj, Meta).
 mode(dorian,     [min, min, maj, maj, min, dim, maj]).
 mode(phrygian,   [min, maj, maj, min, dim, maj, min]).
 mode(lydian,     [maj, maj, min, dim, maj, min, min]).
@@ -191,9 +191,9 @@ mode(locrian,    [dim, maj, min, min, maj, maj, min]).
 get_mode(X, Note, Key, Mode) :-
     scale(Base, Key, Notes),
     nth0(Idx, Notes, Note),
-    mode(Mode, Chords),
-    nth0(Idx, Chords, Chord),
-    X = [Base, Mode, Note, Chord].
+    mode(Mode, Meta),
+    nth0(Idx, Meta, Y),
+    X = [Base, Mode, Note, Y].
 
 scale(c, maj, [ c, d,  e,  f,  g,  a,  b  ]).
 scale(c, min, [ c, d,  ef, f,  g,  af, bf ]).
