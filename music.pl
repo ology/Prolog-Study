@@ -1,4 +1,6 @@
 %% Adapted from the book, Knowledge-Based Programming for Music Research by Schaffer & McGee
+% tonic_rule(Base, Key, Note, Chord, tonic) :-
+%    Base =:= Note.
 
 /**        base, key, note, chord, function */
 key_member(c,    maj, c,    maj,   tonic).
@@ -159,6 +161,9 @@ chord(maj).
 chord(min).
 chord(dim).
 
+key(maj).
+key(min).
+
 note(c).
 note(d).
 note(e).
@@ -167,6 +172,15 @@ note(g).
 note(a).
 note(b).
 
-key(maj).
-key(min).
+c_scale([c, d, e, f, g, a, b]).
+
+in_scale(X) :- c_scale(L), member(X, L).
+
+print_scale() :- c_scale(L), show_records(L).
+
+show_records([]).
+show_records([A|B]) :-
+    format('Note = ~w~n', A),
+    show_records(B).
+
 
