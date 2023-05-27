@@ -142,8 +142,8 @@ roman_mode(min,        [r_i, r_ii, r_III, r_iv, r_v, r_VI, r_VII]).
 roman_mode(aeolian,    [r_i, r_ii, r_III, r_iv, r_v, r_VI, r_VII]).
 roman_mode(locrian,    [r_i, r_II, r_iii, r_iv, r_V, r_VI, r_vii]).
 
-in_roman_mode(X, M) :-
-    roman_mode(M, L),
+in_roman_mode(X, Mode) :-
+    roman_mode(Mode, L),
     member(X, L).
 
 mode(maj,        [maj, min, min, maj, maj, min, dim]).
@@ -155,6 +155,8 @@ mode(mixolydian, [maj, min, dim, maj, min, min, maj]).
 mode(min,        [min, dim, maj, min, min, maj, maj]).
 mode(aeolian,    [min, dim, maj, min, min, maj, maj]).
 mode(locrian,    [dim, maj, min, min, maj, maj, min]).
+
+get_mode()
 
 scale(c, maj, [c, d,  e,  f,  g,  a,  b]).
 scale(c, min, [c, d,  ef, f,  g,  af, bf]).
@@ -171,12 +173,12 @@ scale(a, min, [a, b,  c,  d,  e,  f,  g]).
 scale(b, maj, [b, df, ef, e,  gf, af, bf]).
 scale(b, min, [b, df, d,  e,  gf, g,  a]).
 
-in_scale(X, N, K) :-
-    scale(N, K, L),
+in_scale(X, Note, Key) :-
+    scale(Note, Key, L),
     member(X, L).
 
-print_scale(N, K) :-
-    scale(N, K, L),
+print_scale(Note, Key) :-
+    scale(Note, Key, L),
     show_records(L).
 
 show_records([]).
