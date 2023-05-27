@@ -132,15 +132,25 @@ key_function(min, min,   r_v,   dominant).
 key_function(min, maj,   r_VI,  submediant).
 key_function(min, maj,   r_VII, subtonic).
 
-mode(maj,        [r_I, r_ii, r_iii, r_IV, r_V, r_vi, r_vii]).
-mode(ionian,     [r_I, r_ii, r_iii, r_IV, r_V, r_vi, r_vii]).
-mode(dorian,     [r_i, r_ii, r_III, r_IV, r_v, r_vi, r_VII]).
-mode(phrygian,   [r_i, r_II, r_III, r_iv, r_v, r_VI, r_vii]).
-mode(lydian,     [r_I, r_II, r_iii, r_iv, r_V, r_vi, r_vii]).
-mode(mixolydian, [r_I, r_ii, r_iii, r_IV, r_v, r_vi, r_VII]).
-mode(min,        [r_i, r_ii, r_III, r_iv, r_v, r_VI, r_VII]).
-mode(aeolian,    [r_i, r_ii, r_III, r_iv, r_v, r_VI, r_VII]).
-mode(locrian,    [r_i, r_II, r_iii, r_iv, r_V, r_VI, r_vii]).
+roman_mode(maj,        [r_I, r_ii, r_iii, r_IV, r_V, r_vi, r_vii]).
+roman_mode(ionian,     [r_I, r_ii, r_iii, r_IV, r_V, r_vi, r_vii]).
+roman_mode(dorian,     [r_i, r_ii, r_III, r_IV, r_v, r_vi, r_VII]).
+roman_mode(phrygian,   [r_i, r_II, r_III, r_iv, r_v, r_VI, r_vii]).
+roman_mode(lydian,     [r_I, r_II, r_iii, r_iv, r_V, r_vi, r_vii]).
+roman_mode(mixolydian, [r_I, r_ii, r_iii, r_IV, r_v, r_vi, r_VII]).
+roman_mode(min,        [r_i, r_ii, r_III, r_iv, r_v, r_VI, r_VII]).
+roman_mode(aeolian,    [r_i, r_ii, r_III, r_iv, r_v, r_VI, r_VII]).
+roman_mode(locrian,    [r_i, r_II, r_iii, r_iv, r_V, r_VI, r_vii]).
+
+mode(maj,        [maj, min, min, maj, maj, min, dim]).
+mode(ionian,     [maj, min, min, maj, maj, min, dim]).
+mode(dorian,     [min, min, maj, maj, min, dim, maj]).
+mode(phrygian,   [min, maj, maj, min, dim, maj, min]).
+mode(lydian,     [maj, maj, min, dim, maj, min, min]).
+mode(mixolydian, [maj, min, dim, maj, min, min, maj]).
+mode(min,        [min, dim, maj, min, min, maj, maj]).
+mode(aeolian,    [min, dim, maj, min, min, maj, maj]).
+mode(locrian,    [dim, maj, min, min, maj, maj, min]).
 
 scale(c, maj, [c, d,  e,  f,  g,  a,  b]).
 scale(c, min, [c, d,  ef, f,  g,  af, bf]).
