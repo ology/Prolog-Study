@@ -147,9 +147,13 @@ scale(a, min, [a, b,  c,  d,  e,  f,  g]).
 scale(b, maj, [b, df, ef, e,  gf, af, bf]).
 scale(b, min, [b, df, d,  e,  gf, g,  a]).
 
-in_scale(X, N, K) :- scale(N, K, L), member(X, L).
+in_scale(X, N, K) :-
+    scale(N, K, L),
+    member(X, L).
 
-print_scale(N, K) :- scale(N, K, L), show_records(L).
+print_scale(N, K) :-
+    scale(N, K, L),
+    show_records(L).
 
 show_records([]).
 show_records([A|B]) :-
