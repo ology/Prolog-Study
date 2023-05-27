@@ -156,7 +156,12 @@ mode(min,        [min, dim, maj, min, min, maj, maj]).
 mode(aeolian,    [min, dim, maj, min, min, maj, maj]).
 mode(locrian,    [dim, maj, min, min, maj, maj, min]).
 
-get_mode()
+get_mode(Note, Key, Mode) :-
+    scale(Base, Key, L1),
+    nth0(Idx, L1, Note),
+    mode(Mode, L2),
+    nth0(Idx, L2, X),
+    format('Base: ~w, Mode: ~w, Note: ~w, Chord: ~w~n', [Base, Mode, Note, X]).
 
 scale(c, maj, [c, d,  e,  f,  g,  a,  b]).
 scale(c, min, [c, d,  ef, f,  g,  af, bf]).
