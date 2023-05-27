@@ -145,7 +145,7 @@ roman_mode(locrian,    [r_i, r_II, r_iii, r_iv, r_V, r_VI, r_vii]).
 get_roman_mode(X, Note, Key, Mode) :-
     scale(Base, Key, L1),
     nth0(Idx, L1, Note),
-    mode(Mode, L2),
+    roman_mode(Mode, L2),
     nth0(Idx, L2, Y),
     X = [Base, Mode, Note, Y].
 
