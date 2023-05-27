@@ -142,6 +142,10 @@ roman_mode(min,        [r_i, r_ii, r_III, r_iv, r_v, r_VI, r_VII]).
 roman_mode(aeolian,    [r_i, r_ii, r_III, r_iv, r_v, r_VI, r_VII]).
 roman_mode(locrian,    [r_i, r_II, r_iii, r_iv, r_V, r_VI, r_vii]).
 
+in_roman_mode(X, M) :-
+    roman_mode(M, L),
+    member(X, L).
+
 mode(maj,        [maj, min, min, maj, maj, min, dim]).
 mode(ionian,     [maj, min, min, maj, maj, min, dim]).
 mode(dorian,     [min, min, maj, maj, min, dim, maj]).
