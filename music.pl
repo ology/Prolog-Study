@@ -1,6 +1,6 @@
 chord_in_mode(C, R, F, Value, Dict) :-
     select_dict(meta{chord:C, roman:R, function:F}, Dict, _), % match the dict
-    C == Value. % only return true if the chord matches
+    C == Value. % only true if the chord matches
 
 get_mode_chord(Result, Note, Chord, Key, Mode) :-
     scale(Base, Key, Notes), % get the scale
