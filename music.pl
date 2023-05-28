@@ -1,7 +1,9 @@
+% Example: chord_in_mode(C, R, F, min, meta{...}).
 chord_in_mode(C, R, F, Value, Dict) :-
     select_dict(meta{chord:C, roman:R, function:F}, Dict, _), % match the dict
     C == Value. % only true if the chord matches
 
+% Example: 
 get_mode_chord(Result, Note, Chord, Scale, Mode) :-
     scale(Base, Scale, Notes), % get the scale
     nth0(Idx, Notes, Note),    % get the index of the note
@@ -10,6 +12,7 @@ get_mode_chord(Result, Note, Chord, Scale, Mode) :-
     chord_in_mode(C, R, F, Chord, Dict), % get the c,r,f of the dict
     Result = result{base:Base, mode:Mode, note:Note, chord:C, roman:R, function:F}.
 
+% Example: 
 get_mode(Result, Note, Scale, Mode) :-
     scale(Base, Scale, Notes), % get the scale
     nth0(Idx, Notes, Note),    % get the index of the note
@@ -17,19 +20,23 @@ get_mode(Result, Note, Scale, Mode) :-
     nth0(Idx, Meta, Dict),     % get the indexed dict member
     Result = [Base, Mode, Note, Dict].
 
+% Example: in_scale(c, c, maj).
 in_scale(X, Note, Scale) :-
     scale(Note, Scale, Notes), % get the scale
     member(X, Notes).          % is X a member?
 
+% Example: print_scale(a, min).
 print_scale(Note, Scale) :-
     scale(Note, Scale, Notes), % get the scale
     show_records(Notes).       % print each member
 
+% Example: show_records([c, d, e, f, g, a, b]).
 show_records([]).
 show_records([Head|Tail]) :-
     format('Note = ~w~n', Head), % print the head
     show_records(Tail).          % recurse...
 
+% Example: 
 mode(maj, [
     meta{ chord:maj, roman:r_I,   function:tonic },
     meta{ chord:min, roman:r_ii,  function:supertonic },
@@ -96,6 +103,7 @@ mode(locrian, [
     meta{ chord:min, roman:r_vii, function:subtonic }
 ]).
 
+% Example: 
 scale(c, maj, [c, d, e, f, g, a, b]).
 scale(c, ionian, [c, d, e, f, g, a, b]).
 scale(c, dorian, [c, d, ef, f, g, a, bf]).
@@ -204,4 +212,3 @@ scale(b, mixolydian, [b, cs, ds, e, fs, gs, a]).
 scale(b, min, [b, cs, d, e, fs, g, a]).
 scale(b, aeolian, [b, cs, d, e, fs, g, a]).
 scale(b, locrian, [b, c, d, e, f, g, a]).
-
