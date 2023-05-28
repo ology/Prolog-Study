@@ -191,7 +191,15 @@ mode(lydian, [
     meta{ chord:min, roman:r_vi,  function:submediant },
     meta{ chord:min, roman:r_vii, function:leading_tone }
 ]).
-mode(mixolydian, [maj, min, dim, maj, min, min, maj]).
+mode(mixolydian, [
+    meta{ chord:maj, roman:r_I,   function:tonic },
+    meta{ chord:min, roman:r_ii,  function:supertonic },
+    meta{ chord:dim, roman:r_iii, function:mediant },
+    meta{ chord:maj, roman:r_IV,  function:subdominant },
+    meta{ chord:min, roman:r_v,   function:dominant },
+    meta{ chord:min, roman:r_vi,  function:submediant },
+    meta{ chord:maj, roman:r_VII, function:subtonic }
+]).
 mode(min, [
     meta{ chord:min, roman:r_i,   function:tonic },
     meta{ chord:dim, roman:r_ii,  function:supertonic },
