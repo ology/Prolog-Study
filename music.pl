@@ -85,18 +85,18 @@ get_mode(Result, Note, Key, Mode) :-
 
 % C
 scale(c, maj,        [ c, d,  e,  f,  g,  a,  b  ]).
-scale(c, ionian,     [ c, d,  e,  f,  g,  a,  b  ]).
-scale(c, dorian,     [ c, d,  ef, f,  g,  a,  bf ]).
-scale(c, phrygian,   [ c, df, ef, f,  g,  af, bf ]).
-scale(c, lydian,     [ c, d,  e,  gf, g,  a,  b  ]).
-scale(c, mixolydian, [ c, d,  e,  f,  g,  a,  bf ]).
+% scale(c, ionian,     [ c, d,  e,  f,  g,  a,  b  ]).
+% scale(c, dorian,     [ c, d,  ef, f,  g,  a,  bf ]).
+% scale(c, phrygian,   [ c, df, ef, f,  g,  af, bf ]).
+% scale(c, lydian,     [ c, d,  e,  gf, g,  a,  b  ]).
+% scale(c, mixolydian, [ c, d,  e,  f,  g,  a,  bf ]).
 scale(c, min,        [ c, d,  ef, f,  g,  af, bf ]).
-scale(c, aeolean,    [ c, d,  ef, f,  g,  af, bf ]).
-scale(c, locrian,    [ c, df, ef, f,  gf, af, bf ]).
+% scale(c, aeolean,    [ c, d,  ef, f,  g,  af, bf ]).
+% scale(c, locrian,    [ c, df, ef, f,  gf, af, bf ]).
 % D
 scale(d, maj,        [ d, e,  gf, g,  a,  b,  df ]).
-scale(d, ionian,     [ d, e,  gf, g,  a,  b,  df ]).
-scale(d, lydian,     [ d, e,  gf, g,  a,  b,  df ]).
+% scale(d, ionian,     [ d, e,  gf, g,  a,  b,  df ]).
+% scale(d, lydian,     [ d, e,  gf, g,  a,  b,  df ]).
 scale(d, min, [ d, e,  f,  g,  a,  bf, c  ]).
 % D
 scale(e, maj, [ e, gf, af, a,  b,  df, ef ]).
