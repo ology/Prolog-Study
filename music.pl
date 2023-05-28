@@ -182,7 +182,15 @@ mode(maj, [
 mode(ionian, Meta) :- mode(maj, Meta).
 mode(dorian,     [min, min, maj, maj, min, dim, maj]).
 mode(phrygian,   [min, maj, maj, min, dim, maj, min]).
-mode(lydian,     [maj, maj, min, dim, maj, min, min]).
+mode(lydian, [
+    meta{ chord:maj, roman:r_I,   function:tonic },
+    meta{ chord:maj, roman:r_II,  function:supertonic },
+    meta{ chord:min, roman:r_iii, function:mediant },
+    meta{ chord:dim, roman:r_iv,  function:subdominant },
+    meta{ chord:maj, roman:r_V,   function:dominant },
+    meta{ chord:min, roman:r_vi,  function:submediant },
+    meta{ chord:min, roman:r_vii, function:leading_tone }
+]).
 mode(mixolydian, [maj, min, dim, maj, min, min, maj]).
 mode(min, [
     meta{ chord:min, roman:r_i,   function:tonic },
