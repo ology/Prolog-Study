@@ -189,7 +189,7 @@ get_mode_chord(X, Chord, Note, Key, Mode) :-
     mode(Mode, Meta),
     nth0(Idx, Meta, Dict),
     chord_in_mode(C, R, F, Chord, Dict),
-    X = [Base, Mode, Note, C, R, F].
+    Result = result{base:Base, mode:Mode, note:Note, chord:C, roman:R, function:F}.
 
 get_mode(X, Note, Key, Mode) :-
     scale(Base, Key, Notes),
