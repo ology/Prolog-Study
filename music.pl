@@ -180,7 +180,7 @@ mode(locrian, [
 ]).
 
 in_dict(X, Key, Tag, [Head|Rest]) :-
-    select_dict(Tag{Key:X}, Head, _).
+    select_dict(Tag{Key:X}, Head).
     in_dict(X, Key, Tag, Rest).
 
 get_mode_chord(X, Chord, Note, Key, Mode) :-
