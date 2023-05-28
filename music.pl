@@ -179,6 +179,18 @@ mode(locrian, [
     meta{ chord:min, roman:r_vii, function:subtonic }
 ]).
 
+in_dict(X, Key, Tag, [Head|Rest]) :-
+    select_dict(Tag{Key:X}, Head, _).
+    in_dict(X, Key, Tag, Rest).
+
+get_mode_chord(X, Chord, Note, Key, Mode) :-
+    scale(Base, Key, Notes),
+    nth0(Idx, Notes, Note),
+    mode(Mode, Meta),
+    nth0(Idx, Meta, Y),
+    in_dict(Chord, chord, meta, Meta),
+    X = [Base, Mode, Note, Y].
+
 get_mode(X, Note, Key, Mode) :-
     scale(Base, Key, Notes),
     nth0(Idx, Notes, Note),
