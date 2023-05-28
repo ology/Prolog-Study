@@ -179,18 +179,17 @@ mode(locrian, [
     meta{ chord:min, roman:r_vii, function:subtonic }
 ]).
 
-chord_in_dict(X, Value, Dict) :-
-    select_dict(meta{chord:X}, Dict, _),
-    X == Value.
-    % chord_in_dict(Y, Value, Rest).
+chord_in_dict(C, R, F, Value, Dict) :-
+    select_dict(meta{chord:C, roman:R,  function:F}, Dict, _),
+    C == Value.
 
 get_mode_chord(X, Chord, Note, Key, Mode) :-
     scale(Base, Key, Notes),
     nth0(Idx, Notes, Note),
     mode(Mode, Meta),
     nth0(Idx, Meta, Dict),
-    chord_in_dict(Y, Chord, Dict),
-    X = [Base, Mode, Note, Y].
+    chord_in_dict(C, R, F, Chord, Dict),
+    X = [Base, Mode, Note, C, R, F].
 
 get_mode(X, Note, Key, Mode) :-
     scale(Base, Key, Notes),
