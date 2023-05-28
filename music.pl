@@ -1,6 +1,4 @@
 %% Adapted from the book, Knowledge-Based Programming for Music Research by Schaffer & McGee
-% tonic_rule(Base, Key, Note, Chord, tonic) :-
-%    Base =:= Note.
 
 /**        base, key, note, chord, function */
 key_member(c,    maj, c,    maj,   tonic).
