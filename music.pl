@@ -132,27 +132,6 @@ key_function(min, min,   r_v,   dominant).
 key_function(min, maj,   r_VI,  submediant).
 key_function(min, maj,   r_VII, subtonic).
 
-roman_mode(maj,        [r_I, r_ii, r_iii, r_IV, r_V, r_vi, r_vii]).
-roman_mode(ionian,     [r_I, r_ii, r_iii, r_IV, r_V, r_vi, r_vii]).
-roman_mode(dorian,     [r_i, r_ii, r_III, r_IV, r_v, r_vi, r_VII]).
-roman_mode(phrygian,   [r_i, r_II, r_III, r_iv, r_v, r_VI, r_vii]).
-roman_mode(lydian,     [r_I, r_II, r_iii, r_iv, r_V, r_vi, r_vii]).
-roman_mode(mixolydian, [r_I, r_ii, r_iii, r_IV, r_v, r_vi, r_VII]).
-roman_mode(min,        [r_i, r_ii, r_III, r_iv, r_v, r_VI, r_VII]).
-roman_mode(aeolian,    [r_i, r_ii, r_III, r_iv, r_v, r_VI, r_VII]).
-roman_mode(locrian,    [r_i, r_II, r_iii, r_iv, r_V, r_VI, r_vii]).
-
-get_roman_mode(X, Note, Key, Mode) :-
-    scale(Base, Key, Notes),
-    nth0(Idx, Notes, Note),
-    roman_mode(Mode, Chords),
-    nth0(Idx, Chords, Chord),
-    X = [Base, Mode, Note, Chord].
-
-in_roman_mode(X, Mode) :-
-    roman_mode(Mode, L),
-    member(X, L).
-
 mode(maj, [
     meta{ chord:maj, roman:r_I,   function:tonic },
     meta{ chord:min, roman:r_ii,  function:supertonic },
@@ -163,8 +142,24 @@ mode(maj, [
     meta{ chord:dim, roman:r_vii, function:leading_tone }
 ]).
 mode(ionian, Meta) :- mode(maj, Meta).
-mode(dorian,     [min, min, maj, maj, min, dim, maj]).
-mode(phrygian,   [min, maj, maj, min, dim, maj, min]).
+mode(dorian, [
+    meta{ chord:min, roman:r_i,   function:tonic },
+    meta{ chord:min, roman:r_ii,  function:supertonic },
+    meta{ chord:maj, roman:r_III, function:mediant },
+    meta{ chord:maj, roman:r_IV,  function:subdominant },
+    meta{ chord:min, roman:r_v,   function:dominant },
+    meta{ chord:dim, roman:r_vi,  function:submediant },
+    meta{ chord:maj, roman:r_VII, function:subtonic }
+]).
+mode(phrygian, [
+    meta{ chord:min, roman:r_i,   function:tonic },
+    meta{ chord:maj, roman:r_II,  function:supertonic },
+    meta{ chord:maj, roman:r_III, function:mediant },
+    meta{ chord:min, roman:r_iv,  function:subdominant },
+    meta{ chord:dim, roman:r_v,   function:dominant },
+    meta{ chord:maj, roman:r_VI,  function:submediant },
+    meta{ chord:min, roman:r_vii, function:subtonic }
+]).
 mode(lydian, [
     meta{ chord:maj, roman:r_I,   function:tonic },
     meta{ chord:maj, roman:r_II,  function:supertonic },
