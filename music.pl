@@ -202,7 +202,15 @@ mode(min, [
     meta{ chord:maj, roman:r_VII, function:subtonic }
 ]).
 mode(aeolean, Meta) :- mode(min, Meta).
-mode(locrian,    [dim, maj, min, min, maj, maj, min]).
+mode(locrian, [
+    meta{ chord:dim, roman:r_i,   function:tonic },
+    meta{ chord:maj, roman:r_II,  function:supertonic },
+    meta{ chord:min, roman:r_iii, function:mediant },
+    meta{ chord:min, roman:r_iv,  function:subdominant },
+    meta{ chord:maj, roman:r_V,   function:dominant },
+    meta{ chord:maj, roman:r_VI,  function:submediant },
+    meta{ chord:min, roman:r_vii, function:subtonic }
+]).
 
 get_mode(X, Note, Key, Mode) :-
     scale(Base, Key, Notes),
