@@ -36,7 +36,7 @@ show_records([Head|Tail]) :-
     format('Note = ~w~n', Head), % print the head
     show_records(Tail).          % recurse...
 
-% Example: 
+% Example: mode(maj, Dicts).
 mode(maj, [
     meta{ chord:maj, roman:r_I,   function:tonic },
     meta{ chord:min, roman:r_ii,  function:supertonic },
@@ -103,7 +103,7 @@ mode(locrian, [
     meta{ chord:min, roman:r_vii, function:subtonic }
 ]).
 
-% Example: 
+% Example: scale(c, maj, Scale).
 scale(c, maj, [c, d, e, f, g, a, b]).
 scale(c, ionian, [c, d, e, f, g, a, b]).
 scale(c, dorian, [c, d, ef, f, g, a, bf]).
