@@ -113,23 +113,6 @@ key_member(b,    min, gf,   min,   dominant).
 key_member(b,    min, g,    maj,   submediant).
 key_member(b,    min, a,    maj,   subtonic).
 
-/**          key, chord, roman, function */
-key_function(maj, maj,   r_I,   tonic).
-key_function(maj, min,   r_ii,  supertonic).
-key_function(maj, min,   r_iii, mediant).
-key_function(maj, maj,   r_IV,  subdominant).
-key_function(maj, maj,   r_V,   dominant).
-key_function(maj, min,   r_vi,  submediant).
-key_function(maj, dim,   r_vii, leading_tone).
-% minor
-key_function(min, min,   r_i,   tonic).
-key_function(min, dim,   r_ii,  supertonic).
-key_function(min, maj,   r_III, mediant).
-key_function(min, min,   r_iv,  subdominant).
-key_function(min, min,   r_v,   dominant).
-key_function(min, maj,   r_VI,  submediant).
-key_function(min, maj,   r_VII, subtonic).
-
 mode(maj, [
     meta{ chord:maj, roman:r_I,   function:tonic },
     meta{ chord:min, roman:r_ii,  function:supertonic },
