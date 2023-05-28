@@ -1,3 +1,35 @@
+chord_in_mode(C, R, F, Value, Dict) :-
+    select_dict(meta{chord:C, roman:R, function:F}, Dict, _), % match the dict
+    C == Value. % only return true if the chord matches
+
+get_mode_chord(Result, Note, Chord, Key, Mode) :-
+    scale(Base, Key, Notes), % get the scale
+    nth0(Idx, Notes, Note),  % get the index of the note
+    mode(Mode, Meta),        % get the meta dicts
+    nth0(Idx, Meta, Dict),   % get the indexed dict member
+    chord_in_mode(C, R, F, Chord, Dict), % get the c,r,f of the dict
+    Result = result{base:Base, mode:Mode, note:Note, chord:C, roman:R, function:F}.
+
+get_mode(Result, Note, Key, Mode) :-
+    scale(Base, Key, Notes), % get the scale
+    nth0(Idx, Notes, Note),  % get the index of the note
+    mode(Mode, Meta),        % get the meta dicts
+    nth0(Idx, Meta, Dict),   % get the indexed dict member
+    Result = [Base, Mode, Note, Dict].
+
+in_scale(X, Note, Key) :-
+    scale(Note, Key, Notes), % get the scale
+    member(X, Notes).        % is X a member?
+
+print_scale(Note, Key) :-
+    scale(Note, Key, Notes), % get the scale
+    show_records(Notes).     % print each member
+
+show_records([]).
+show_records([Head|Tail]) :-
+    format('Note = ~w~n', Head), % print the head
+    show_records(Tail).          % recurse...
+
 mode(maj, [
     meta{ chord:maj, roman:r_I,   function:tonic },
     meta{ chord:min, roman:r_ii,  function:supertonic },
@@ -63,25 +95,6 @@ mode(locrian, [
     meta{ chord:maj, roman:r_VI,  function:submediant },
     meta{ chord:min, roman:r_vii, function:subtonic }
 ]).
-
-chord_in_mode(C, R, F, Value, Dict) :-
-    select_dict(meta{chord:C, roman:R, function:F}, Dict, _), % match the dict
-    C == Value. % only return true if the chord matches
-
-get_mode_chord(Result, Note, Chord, Key, Mode) :-
-    scale(Base, Key, Notes), % get the scale
-    nth0(Idx, Notes, Note),  % get the index of the note
-    mode(Mode, Meta),        % get the meta dicts
-    nth0(Idx, Meta, Dict),   % get the indexed dict member
-    chord_in_mode(C, R, F, Chord, Dict), % get the c,r,f of the dict
-    Result = result{base:Base, mode:Mode, note:Note, chord:C, roman:R, function:F}.
-
-get_mode(Result, Note, Key, Mode) :-
-    scale(Base, Key, Notes), % get the scale
-    nth0(Idx, Notes, Note),  % get the index of the note
-    mode(Mode, Meta),        % get the meta dicts
-    nth0(Idx, Meta, Dict),   % get the indexed dict member
-    Result = [Base, Mode, Note, Dict].
 
 scale(c, maj, [c, d, e, f, g, a, b]).
 scale(c, ionian, [c, d, e, f, g, a, b]).
@@ -191,17 +204,4 @@ scale(b, mixolydian, [b, cs, ds, e, fs, gs, a]).
 scale(b, min, [b, cs, d, e, fs, g, a]).
 scale(b, aeolian, [b, cs, d, e, fs, g, a]).
 scale(b, locrian, [b, c, d, e, f, g, a]).
-
-in_scale(X, Note, Key) :-
-    scale(Note, Key, Notes), % get the scale
-    member(X, Notes).        % is X a member?
-
-print_scale(Note, Key) :-
-    scale(Note, Key, Notes), % get the scale
-    show_records(Notes).     % print each member
-
-show_records([]).
-show_records([Head|Tail]) :-
-    format('Note = ~w~n', Head), % print the head
-    show_records(Tail).          % recurse...
 
