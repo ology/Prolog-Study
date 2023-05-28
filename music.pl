@@ -183,7 +183,7 @@ chord_in_mode(C, R, F, Value, Dict) :-
     select_dict(meta{chord:C, roman:R, function:F}, Dict, _),
     C == Value.
 
-get_mode_chord(X, Chord, Note, Key, Mode) :-
+get_mode_chord(Result, Chord, Note, Key, Mode) :-
     scale(Base, Key, Notes),
     nth0(Idx, Notes, Note),
     mode(Mode, Meta),
