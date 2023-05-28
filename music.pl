@@ -2,28 +2,28 @@ chord_in_mode(C, R, F, Value, Dict) :-
     select_dict(meta{chord:C, roman:R, function:F}, Dict, _), % match the dict
     C == Value. % only true if the chord matches
 
-get_mode_chord(Result, Note, Chord, Key, Mode) :-
-    scale(Base, Key, Notes), % get the scale
-    nth0(Idx, Notes, Note),  % get the index of the note
-    mode(Mode, Meta),        % get the meta dicts
-    nth0(Idx, Meta, Dict),   % get the indexed dict member
+get_mode_chord(Result, Note, Chord, Scale, Mode) :-
+    scale(Base, Scale, Notes), % get the scale
+    nth0(Idx, Notes, Note),    % get the index of the note
+    mode(Mode, Meta),          % get the meta dicts
+    nth0(Idx, Meta, Dict),     % get the indexed dict member
     chord_in_mode(C, R, F, Chord, Dict), % get the c,r,f of the dict
     Result = result{base:Base, mode:Mode, note:Note, chord:C, roman:R, function:F}.
 
-get_mode(Result, Note, Key, Mode) :-
-    scale(Base, Key, Notes), % get the scale
-    nth0(Idx, Notes, Note),  % get the index of the note
-    mode(Mode, Meta),        % get the meta dicts
-    nth0(Idx, Meta, Dict),   % get the indexed dict member
+get_mode(Result, Note, Scale, Mode) :-
+    scale(Base, Scale, Notes), % get the scale
+    nth0(Idx, Notes, Note),    % get the index of the note
+    mode(Mode, Meta),          % get the meta dicts
+    nth0(Idx, Meta, Dict),     % get the indexed dict member
     Result = [Base, Mode, Note, Dict].
 
-in_scale(X, Note, Key) :-
-    scale(Note, Key, Notes), % get the scale
-    member(X, Notes).        % is X a member?
+in_scale(X, Note, Scale) :-
+    scale(Note, Scale, Notes), % get the scale
+    member(X, Notes).          % is X a member?
 
-print_scale(Note, Key) :-
-    scale(Note, Key, Notes), % get the scale
-    show_records(Notes).     % print each member
+print_scale(Note, Scale) :-
+    scale(Note, Scale, Notes), % get the scale
+    show_records(Notes).       % print each member
 
 show_records([]).
 show_records([Head|Tail]) :-
