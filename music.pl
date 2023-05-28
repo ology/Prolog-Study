@@ -184,8 +184,16 @@ mode(dorian,     [min, min, maj, maj, min, dim, maj]).
 mode(phrygian,   [min, maj, maj, min, dim, maj, min]).
 mode(lydian,     [maj, maj, min, dim, maj, min, min]).
 mode(mixolydian, [maj, min, dim, maj, min, min, maj]).
-mode(min,        [min, dim, maj, min, min, maj, maj]).
-mode(aeolian,    [min, dim, maj, min, min, maj, maj]).
+mode(min, [
+    meta{ chord:min, roman:r_i,   function:tonic },
+    meta{ chord:dim, roman:r_ii,  function:supertonic },
+    meta{ chord:maj, roman:r_III, function:mediant },
+    meta{ chord:min, roman:r_iv,  function:subdominant },
+    meta{ chord:min, roman:r_v,   function:dominant },
+    meta{ chord:maj, roman:r_VI,  function:submediant },
+    meta{ chord:maj, roman:r_VII, function:subtonic }
+]).
+mode(aeolean, Meta) :- mode(min, Meta).
 mode(locrian,    [dim, maj, min, min, maj, maj, min]).
 
 get_mode(X, Note, Key, Mode) :-
