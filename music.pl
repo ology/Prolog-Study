@@ -180,7 +180,7 @@ mode(locrian, [
 ]).
 
 chord_in_dict(C, R, F, Value, Dict) :-
-    select_dict(meta{chord:C, roman:R,  function:F}, Dict, _),
+    select_dict(meta{chord:C, roman:R, function:F}, Dict, _),
     C == Value.
 
 get_mode_chord(X, Chord, Note, Key, Mode) :-
