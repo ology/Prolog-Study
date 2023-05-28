@@ -132,23 +132,6 @@ key_function(min, min,   r_v,   dominant).
 key_function(min, maj,   r_VI,  submediant).
 key_function(min, maj,   r_VII, subtonic).
 
-function_mode(maj,        [tonic, supertonic, mediant, subdominant, dominant, submediant, leading_tone]).
-function_mode(ionian,     [tonic, supertonic, mediant, subdominant, dominant, submediant, leading_tone]).
-function_mode(dorian,     [tonic, supertonic, mediant, subdominant, dominant, submediant, subtonic]).
-function_mode(phrygian,   [tonic, supertonic, mediant, subdominant, dominant, submediant, subtonic]).
-function_mode(lydian,     [tonic, supertonic, mediant, subdominant, dominant, submediant, leading_tone]).
-function_mode(mixolydian, [tonic, supertonic, mediant, subdominant, dominant, submediant, subtonic]).
-function_mode(min,        [tonic, supertonic, mediant, subdominant, dominant, submediant, subtonic]).
-function_mode(aeolian,    [tonic, supertonic, mediant, subdominant, dominant, submediant, subtonic]).
-function_mode(locrian,    [tonic, supertonic, mediant, subdominant, dominant, submediant, subtonic]).
-
-get_function_mode(X, Note, Key, Mode) :-
-    scale(Base, Key, Notes),
-    nth0(Idx, Notes, Note),
-    function_mode(Mode, Functions),
-    nth0(Idx, Functions, Function),
-    X = [Base, Mode, Note, Function].
-
 roman_mode(maj,        [r_I, r_ii, r_iii, r_IV, r_V, r_vi, r_vii]).
 roman_mode(ionian,     [r_I, r_ii, r_iii, r_IV, r_V, r_vi, r_vii]).
 roman_mode(dorian,     [r_i, r_ii, r_III, r_IV, r_v, r_vi, r_VII]).
