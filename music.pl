@@ -3,7 +3,7 @@ chord_in_mode(C, R, F, Value, Dict) :-
     select_dict(meta{chord:C, roman:R, function:F}, Dict, _), % match the dict
     C == Value. % only true if the chord matches
 
-% Example: 
+% Example: get_mode_chord(X, c, maj, ionian, _).
 get_mode_chord(Result, Note, Chord, Scale, Mode) :-
     scale(Base, Scale, Notes), % get the scale
     nth0(Idx, Notes, Note),    % get the index of the note
@@ -12,7 +12,7 @@ get_mode_chord(Result, Note, Chord, Scale, Mode) :-
     chord_in_mode(C, R, F, Chord, Dict), % get the c,r,f of the dict
     Result = result{base:Base, mode:Mode, note:Note, chord:C, roman:R, function:F}.
 
-% Example: 
+% Example: get_mode(X, c, ionian, _).
 get_mode(Result, Note, Scale, Mode) :-
     scale(Base, Scale, Notes), % get the scale
     nth0(Idx, Notes, Note),    % get the index of the note
