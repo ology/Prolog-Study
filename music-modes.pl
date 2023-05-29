@@ -3,7 +3,7 @@ function_in_mode(C, R, F, Value, Dict) :-
     select_dict(meta{chord:C, roman:R, function:F}, Dict, _), % match the dict
     F == Value. % only true if the function matches
 
-% Example: get_mode_chord(X, c, tonic, ionian, _).
+% Example: get_mode_function(X, c, tonic, ionian, _).
 get_mode_function(Result, Note, Function, Scale, Mode) :-
     scale(Base, Scale, Notes), % get the scale
     nth0(Idx, Notes, Note),    % get the index of the note
