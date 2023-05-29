@@ -116,25 +116,25 @@ my_key_member(b,    min, a,    maj,   subtonic).
 
 % Taken directly from the book:
 
-key_member(cmaj, cmaj, tonic).
-key_member(cmaj, cmin, tonic).
-key_member(cmaj, gmaj, dominant).
-key_member(cmaj, fmaj, subdominant).
-key_member(cmaj, fmin, subdominant).
-key_member(cmin, cmin, tonic).
-key_member(cmin, cmaj, tonic).
-key_member(cmin, gmaj, dominant).
-key_member(cmin, fmin, subdominant).
-key_member(cmin, fmaj, subdominant).
-key_member(gmaj, gmaj, tonic).
-key_member(gmaj, dmaj, dominant).
-key_member(gmaj, cmaj, subdominant).
-key_member(fmaj, fmaj, tonic).
-key_member(fmaj, cmaj, dominant).
+key_member(cmaj, cmaj,  tonic).
+key_member(cmaj, cmin,  tonic).
+key_member(cmaj, gmaj,  dominant).
+key_member(cmaj, fmaj,  subdominant).
+key_member(cmaj, fmin,  subdominant).
+key_member(cmin, cmin,  tonic).
+key_member(cmin, cmaj,  tonic).
+key_member(cmin, gmaj,  dominant).
+key_member(cmin, fmin,  subdominant).
+key_member(cmin, fmaj,  subdominant).
+key_member(gmaj, gmaj,  tonic).
+key_member(gmaj, dmaj,  dominant).
+key_member(gmaj, cmaj,  subdominant).
+key_member(fmaj, fmaj,  tonic).
+key_member(fmaj, cmaj,  dominant).
 key_member(fmaj, bbmaj, subdominant).
-key_member(dmaj, dmaj, tonic).
-key_member(dmaj, amaj, dominant).
-key_member(dmaj, gmaj, subdominant).
+key_member(dmaj, dmaj,  tonic).
+key_member(dmaj, amaj,  dominant).
+key_member(dmaj, gmaj,  subdominant).
 
 pivot_chord(Chord, Key1, Key2) :-
     key_member(Key1, Chord, Function1),
