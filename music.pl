@@ -10,7 +10,7 @@ get_mode_chord(Result, Note, Chord, Scale, Mode) :-
     mode(Mode, Meta),          % get the meta dicts
     nth0(Idx, Meta, Dict),     % get the indexed dict member
     chord_in_mode(C, R, F, Chord, Dict), % get the c,r,f of the dict
-    Result = result{base:Base, mode:Mode, note:Note, chord:C, roman:R, function:F}.
+    Result = result{base:Base, scale:Scale, mode:Mode, note:Note, chord:C, roman:R, function:F}.
 
 % Example: get_mode(X, c, ionian, _).
 get_mode(Result, Note, Scale, Mode) :-
@@ -18,7 +18,7 @@ get_mode(Result, Note, Scale, Mode) :-
     nth0(Idx, Notes, Note),    % get the index of the note
     mode(Mode, Meta),          % get the meta dicts
     nth0(Idx, Meta, Dict),     % get the indexed dict member
-    Result = [Base, Mode, Note, Dict].
+    Result = [Base, Mode, Note, Scale, Dict].
 
 % Example: in_scale(c, c, maj).
 in_scale(X, Note, Scale) :-
