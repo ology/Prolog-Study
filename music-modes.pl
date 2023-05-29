@@ -1,3 +1,17 @@
+% Example: function_in_mode(C, R, F, min, meta{...}).
+function_in_mode(C, R, F, Value, Dict) :-
+    select_dict(meta{chord:C, roman:R, function:F}, Dict, _), % match the dict
+    F == Value. % only true if the function matches
+
+% Example: get_mode_chord(X, c, tonic, ionian, _).
+get_mode_function(Result, Note, Function, Scale, Mode) :-
+    scale(Base, Scale, Notes), % get the scale
+    nth0(Idx, Notes, Note),    % get the index of the note
+    mode(Mode, Meta),          % get the meta dicts
+    nth0(Idx, Meta, Dict),     % get the indexed dict member
+    function_in_mode(C, R, F, Function, Dict), % get the c,r,f of the dict
+    Result = result{base:Base, scale:Scale, mode:Mode, note:Note, chord:C, roman:R, function:F}.
+
 % Example: chord_in_mode(C, R, F, min, meta{...}).
 chord_in_mode(C, R, F, Value, Dict) :-
     select_dict(meta{chord:C, roman:R, function:F}, Dict, _), % match the dict
@@ -20,12 +34,12 @@ get_mode(Result, Note, Scale, Mode) :-
     nth0(Idx, Meta, Dict),     % get the indexed dict member
     Result = [Base, Mode, Note, Scale, Dict].
 
-% Example: in_scale(c, c, maj).
+% Example: in_scale(c, c, ionian).
 in_scale(X, Note, Scale) :-
     scale(Note, Scale, Notes), % get the scale
     member(X, Notes).          % is X a member?
 
-% Example: print_scale(a, min).
+% Example: print_scale(a, ionian).
 print_scale(Note, Scale) :-
     scale(Note, Scale, Notes), % get the scale
     show_records(Notes).       % print each member
