@@ -37,7 +37,7 @@ show_records([Head|Tail]) :-
     show_records(Tail).          % recurse...
 
 % Example: mode(maj, Dicts).
-mode(maj, [
+mode(ionian, [
     meta{ chord:maj, roman:r_I,   function:tonic },
     meta{ chord:min, roman:r_ii,  function:supertonic },
     meta{ chord:min, roman:r_iii, function:mediant },
@@ -46,7 +46,6 @@ mode(maj, [
     meta{ chord:min, roman:r_vi,  function:submediant },
     meta{ chord:dim, roman:r_vii, function:leading_tone }
 ]).
-mode(ionian, Meta) :- mode(maj, Meta).
 mode(dorian, [
     meta{ chord:min, roman:r_i,   function:tonic },
     meta{ chord:min, roman:r_ii,  function:supertonic },
@@ -83,7 +82,7 @@ mode(mixolydian, [
     meta{ chord:min, roman:r_vi,  function:submediant },
     meta{ chord:maj, roman:r_VII, function:subtonic }
 ]).
-mode(min, [
+mode(aeolean, [
     meta{ chord:min, roman:r_i,   function:tonic },
     meta{ chord:dim, roman:r_ii,  function:supertonic },
     meta{ chord:maj, roman:r_III, function:mediant },
@@ -92,7 +91,6 @@ mode(min, [
     meta{ chord:maj, roman:r_VI,  function:submediant },
     meta{ chord:maj, roman:r_VII, function:subtonic }
 ]).
-mode(aeolean, Meta) :- mode(min, Meta).
 mode(locrian, [
     meta{ chord:dim, roman:r_i,   function:tonic },
     meta{ chord:maj, roman:r_II,  function:supertonic },
@@ -103,112 +101,88 @@ mode(locrian, [
     meta{ chord:min, roman:r_vii, function:subtonic }
 ]).
 
-% Example: scale(c, maj, Scale).
-scale(c, maj, [c, d, e, f, g, a, b]).
+% Example: scale(c, ionian, Scale).
 scale(c, ionian, [c, d, e, f, g, a, b]).
 scale(c, dorian, [c, d, ef, f, g, a, bf]).
 scale(c, phrygian, [c, df, ef, f, g, af, bf]).
 scale(c, lydian, [c, d, e, fs, g, a, b]).
 scale(c, mixolydian, [c, d, e, f, g, a, bf]).
-scale(c, min, [c, d, ef, f, g, af, bf]).
 scale(c, aeolian, [c, d, ef, f, g, af, bf]).
 scale(c, locrian, [c, df, ef, f, gf, af, bf]).
-scale(cs, maj, [cs, ds, f, fs, gs, as, c]).
 scale(cs, ionian, [cs, ds, f, fs, gs, as, c]).
 scale(cs, dorian, [cs, d, ef, f, g, a, bf]).
 scale(cs, phrygian, [cs, df, ef, f, g, af, bf]).
 scale(cs, lydian, [cs, d, e, fs, g, a, b]).
 scale(cs, mixolydian, [cs, d, e, f, g, a, bf]).
-scale(cs, min, [cs, d, ef, f, g, af, bf]).
 scale(cs, aeolian, [cs, d, ef, f, g, af, bf]).
 scale(cs, locrian, [cs, df, ef, f, gf, af, bf]).
-scale(d, maj, [d, e, fs, g, a, b, cs]).
 scale(d, ionian, [d, e, fs, g, a, b, cs]).
 scale(d, dorian, [d, e, f, g, a, b, c]).
 scale(d, phrygian, [d, ef, f, g, a, bf, c]).
 scale(d, lydian, [d, e, fs, gs, a, b, cs]).
 scale(d, mixolydian, [d, e, fs, g, a, b, c]).
-scale(d, min, [d, e, f, g, a, bf, c]).
 scale(d, aeolian, [d, e, f, g, a, bf, c]).
 scale(d, locrian, [d, ef, f, g, af, bf, c]).
-scale(ds, maj, [ds, f, g, gs, as, c, d]).
 scale(ds, ionian, [ds, f, g, gs, as, c, d]).
 scale(ds, dorian, [ds, e, f, g, a, b, c]).
 scale(ds, phrygian, [ds, ef, f, g, a, bf, c]).
 scale(ds, lydian, [ds, e, fs, gs, a, b, cs]).
 scale(ds, mixolydian, [ds, e, fs, g, a, b, c]).
-scale(ds, min, [ds, e, f, g, a, bf, c]).
 scale(ds, aeolian, [ds, e, f, g, a, bf, c]).
 scale(ds, locrian, [ds, ef, f, g, af, bf, c]).
-scale(e, maj, [e, fs, gs, a, b, cs, ds]).
 scale(e, ionian, [e, fs, gs, a, b, cs, ds]).
 scale(e, dorian, [e, fs, g, a, b, cs, d]).
 scale(e, phrygian, [e, f, g, a, b, c, d]).
 scale(e, lydian, [e, fs, gs, as, b, cs, ds]).
 scale(e, mixolydian, [e, fs, gs, a, b, cs, d]).
-scale(e, min, [e, fs, g, a, b, c, d]).
 scale(e, aeolian, [e, fs, g, a, b, c, d]).
 scale(e, locrian, [e, f, g, a, bf, c, d]).
-scale(f, maj, [f, g, a, bf, c, d, e]).
 scale(f, ionian, [f, g, a, bf, c, d, e]).
 scale(f, dorian, [f, g, af, bf, c, d, ef]).
 scale(f, phrygian, [f, gf, af, bf, c, df, ef]).
 scale(f, lydian, [f, g, a, b, c, d, e]).
 scale(f, mixolydian, [f, g, a, bf, c, d, ef]).
-scale(f, min, [f, g, af, bf, c, df, ef]).
 scale(f, aeolian, [f, g, af, bf, c, df, ef]).
 scale(f, locrian, [f, gf, af, bf, b, df, ef]).
-scale(fs, maj, [fs, gs, as, b, cs, ds, f]).
 scale(fs, ionian, [fs, gs, as, b, cs, ds, f]).
 scale(fs, dorian, [fs, g, af, bf, c, d, ef]).
 scale(fs, phrygian, [fs, gf, af, bf, c, df, ef]).
 scale(fs, lydian, [fs, g, a, b, c, d, e]).
 scale(fs, mixolydian, [fs, g, a, bf, c, d, ef]).
-scale(fs, min, [fs, g, af, bf, c, df, ef]).
 scale(fs, aeolian, [fs, g, af, bf, c, df, ef]).
 scale(fs, locrian, [fs, gf, af, bf, b, df, ef]).
-scale(g, maj, [g, a, b, c, d, e, fs]).
 scale(g, ionian, [g, a, b, c, d, e, fs]).
 scale(g, dorian, [g, a, bf, c, d, e, f]).
 scale(g, phrygian, [g, af, bf, c, d, ef, f]).
 scale(g, lydian, [g, a, b, cs, d, e, fs]).
 scale(g, mixolydian, [g, a, b, c, d, e, f]).
-scale(g, min, [g, a, bf, c, d, ef, f]).
 scale(g, aeolian, [g, a, bf, c, d, ef, f]).
 scale(g, locrian, [g, af, bf, c, df, ef, f]).
-scale(gs, maj, [gs, as, c, cs, ds, f, g]).
 scale(gs, ionian, [gs, as, c, cs, ds, f, g]).
 scale(gs, dorian, [gs, a, bf, c, d, e, f]).
 scale(gs, phrygian, [gs, af, bf, c, d, ef, f]).
 scale(gs, lydian, [gs, a, b, cs, d, e, fs]).
 scale(gs, mixolydian, [gs, a, b, c, d, e, f]).
-scale(gs, min, [gs, a, bf, c, d, ef, f]).
 scale(gs, aeolian, [gs, a, bf, c, d, ef, f]).
 scale(gs, locrian, [gs, af, bf, c, df, ef, f]).
-scale(a, maj, [a, b, cs, d, e, fs, gs]).
 scale(a, ionian, [a, b, cs, d, e, fs, gs]).
 scale(a, dorian, [a, b, c, d, e, fs, g]).
 scale(a, phrygian, [a, bf, c, d, e, f, g]).
 scale(a, lydian, [a, b, cs, ds, e, fs, gs]).
 scale(a, mixolydian, [a, b, cs, d, e, fs, g]).
-scale(a, min, [a, b, c, d, e, f, g]).
 scale(a, aeolian, [a, b, c, d, e, f, g]).
 scale(a, locrian, [a, bf, c, d, ef, f, g]).
-scale(as, maj, [as, c, d, ds, f, g, a]).
 scale(as, ionian, [as, c, d, ds, f, g, a]).
 scale(as, dorian, [as, b, c, d, e, fs, g]).
 scale(as, phrygian, [as, bf, c, d, e, f, g]).
 scale(as, lydian, [as, b, cs, ds, e, fs, gs]).
 scale(as, mixolydian, [as, b, cs, d, e, fs, g]).
-scale(as, min, [as, b, c, d, e, f, g]).
 scale(as, aeolian, [as, b, c, d, e, f, g]).
 scale(as, locrian, [as, bf, c, d, ef, f, g]).
-scale(b, maj, [b, cs, ds, e, fs, gs, as]).
 scale(b, ionian, [b, cs, ds, e, fs, gs, as]).
 scale(b, dorian, [b, cs, d, e, fs, gs, a]).
 scale(b, phrygian, [b, c, d, e, fs, g, a]).
 scale(b, lydian, [b, cs, ds, f, fs, gs, as]).
 scale(b, mixolydian, [b, cs, ds, e, fs, gs, a]).
-scale(b, min, [b, cs, d, e, fs, g, a]).
 scale(b, aeolian, [b, cs, d, e, fs, g, a]).
 scale(b, locrian, [b, c, d, e, f, g, a]).
