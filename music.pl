@@ -33,8 +33,8 @@ print_scale(Note, Scale) :-
 % Example: show_records([c, d, e, f, g, a, b]).
 show_records([]).
 show_records([Head|Tail]) :-
-    format('Note = ~w~n', Head), % print the head
-    show_records(Tail).          % recurse...
+    format('Member = ~w~n', Head), % print the head
+    show_records(Tail).            % recurse...
 
 % Example: mode(maj, Dicts).
 mode(ionian, [
