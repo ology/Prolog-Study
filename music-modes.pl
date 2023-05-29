@@ -36,7 +36,17 @@ show_records([Head|Tail]) :-
     format('Member = ~w~n', Head), % print the head
     show_records(Tail).            % recurse...
 
-% Example: mode(maj, Dicts).
+%! mode(Scale_name, Diatonic_properties)
+%
+%   The diatonic properties of each named mode.
+%
+%   @param {atom} Scale_name - scale name
+%   @param {dict[]} Diatonic_properties - diatonic properties
+% 
+%     ==
+%     ?- mode(ionian, X).
+%     ==
+
 mode(ionian, [
     meta{ chord:maj, roman:r_I,   function:tonic },
     meta{ chord:min, roman:r_ii,  function:supertonic },
@@ -101,7 +111,18 @@ mode(locrian, [
     meta{ chord:min, roman:r_vii, function:subtonic }
 ]).
 
-% Example: scale(c, ionian, Scale).
+%! scale(Note, Scale_name, Notes)
+%
+%   The notes names of a named scale.
+%
+%   @param {atom} Note - named scale note
+%   @param {atom} Scale_name - scale name
+%   @param {atom[]} Notes - named scale notes
+% 
+%     ==
+%     ?- scale(c, ionian, X).
+%     ==
+
 scale(c,  ionian,     [ c,  d,  e,  f,  g,  a,  b  ]).
 scale(c,  dorian,     [ c,  d,  ef, f,  g,  a,  bf ]).
 scale(c,  phrygian,   [ c,  df, ef, f,  g,  af, bf ]).
