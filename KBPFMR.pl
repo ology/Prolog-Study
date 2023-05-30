@@ -121,19 +121,24 @@ chord_key(b,    min, gf,   min,   dominant).
 chord_key(b,    min, g,    maj,   submediant).
 chord_key(b,    min, a,    maj,   subtonic).
 
+pivot_chord_keys(Note1, Chord, Key1, Note2, Key2) :-
+    chord_key(Note1, Key1, Chord, Key2, Function1),
+    chord_key(Note2, Key2, Chord, Key2, Function2),
+    Function1 \= Function2,
+    Key1 \= Key2.
 
 % Taken directly from the book:
 
 key_member(cmaj, cmaj,  tonic).
-key_member(cmaj, cmin,  tonic).
+key_member(cmaj, cmin,  tonic). % sic. Incorrect.
 key_member(cmaj, gmaj,  dominant).
 key_member(cmaj, fmaj,  subdominant).
-key_member(cmaj, fmin,  subdominant).
+key_member(cmaj, fmin,  subdominant). % sic. Incorrect.
 key_member(cmin, cmin,  tonic).
-key_member(cmin, cmaj,  tonic).
-key_member(cmin, gmaj,  dominant).
+key_member(cmin, cmaj,  tonic). % sic. Incorrect.
+key_member(cmin, gmaj,  dominant). % sic. Incorrect.
 key_member(cmin, fmin,  subdominant).
-key_member(cmin, fmaj,  subdominant).
+key_member(cmin, fmaj,  subdominant). % sic. Incorrect.
 key_member(gmaj, gmaj,  tonic).
 key_member(gmaj, dmaj,  dominant).
 key_member(gmaj, cmaj,  subdominant).
@@ -149,7 +154,6 @@ pivot_chord(Chord, Key1, Key2) :-
     key_member(Key2, Chord, Function2),
     Function1 \= Function2,
     Key1 \= Key2.
-
 
 borrowed_chord(Chord, Key1, Key2, Function) :-
     key_member(Key1, Chord, Function),
