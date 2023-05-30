@@ -106,7 +106,7 @@ mode(mixolydian, [
     meta{ chord:min, roman:r_vi,  function:submediant },
     meta{ chord:maj, roman:r_VII, function:subtonic }
 ]).
-mode(aeolean, [
+mode(aeolian, [
     meta{ chord:min, roman:r_i,   function:tonic },
     meta{ chord:dim, roman:r_ii,  function:supertonic },
     meta{ chord:maj, roman:r_III, function:mediant },
