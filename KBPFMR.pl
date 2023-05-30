@@ -1,6 +1,6 @@
 % Adapted from the book, Knowledge-Based Programming for Music Research by Schaffer & McGee
 
-/**        base, key, note, chord, function */
+/**       base, key, note, chord, function */
 chord_key(c,    maj, c,    maj,   tonic).
 chord_key(c,    maj, d,    min,   supertonic).
 chord_key(c,    maj, e,    min,   mediant).
