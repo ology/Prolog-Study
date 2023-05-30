@@ -1,6 +1,14 @@
 % Adapted from the book, Knowledge-Based Programming for Music Research by Schaffer & McGee
 
-%         base, key, note, chord, function
+% Example:
+% ?- chord_key(Base, Key, g, maj, Function), not((Base == c, Key == maj)).
+% Base = d, Key = maj, Function = subdominant ;
+% Base = e, Key = min, Function = mediant ;
+% Base = g, Key = maj, Function = tonic ;
+% Base = a, Key = min, Function = subtonic ;
+% Base = b, Key = min, Function = submediant.
+%
+%   Args: base, key, note, chord, function
 chord_key(c,    maj, c,    maj,   tonic).
 chord_key(c,    maj, d,    min,   supertonic).
 chord_key(c,    maj, e,    min,   mediant).
