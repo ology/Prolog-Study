@@ -130,15 +130,16 @@ pivot_chord_keys(Note1, Chord, Key1, Note2, Key2) :-
 % Taken directly from the book:
 
 key_member(cmaj, cmaj,  tonic).
-key_member(cmaj, cmin,  tonic).       % sic. Incorrect.
+% key_member(cmaj, cmin,  tonic).       % sic. Incorrect.
 key_member(cmaj, gmaj,  dominant).
 key_member(cmaj, fmaj,  subdominant).
-key_member(cmaj, fmin,  subdominant). % sic. Incorrect.
+% key_member(cmaj, fmin,  subdominant). % sic. Incorrect.
 key_member(cmin, cmin,  tonic).
-key_member(cmin, cmaj,  tonic).       % sic. Incorrect.
-key_member(cmin, gmaj,  dominant).    % sic. Incorrect.
+% key_member(cmin, cmaj,  tonic).       % sic. Incorrect.
+% key_member(cmin, gmaj,  dominant).    % sic. Incorrect.
+key_member(cmin, gmin,  dominant).      % Corrected.
 key_member(cmin, fmin,  subdominant).
-key_member(cmin, fmaj,  subdominant). % sic. Incorrect.
+% key_member(cmin, fmaj,  subdominant). % sic. Incorrect.
 key_member(gmaj, gmaj,  tonic).
 key_member(gmaj, dmaj,  dominant).
 key_member(gmaj, cmaj,  subdominant).
