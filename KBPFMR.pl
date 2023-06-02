@@ -121,10 +121,11 @@ chord_key(b,    min, gf,   min,   dominant).
 chord_key(b,    min, g,    maj,   submediant).
 chord_key(b,    min, a,    maj,   subtonic).
 
-pivot_chord_keys(Note1, Chord, Key1, Note2, Key2) :-
-    chord_key(Note1, Key1, Chord, Key2, Function1),
-    chord_key(Note2, Key2, Chord, Key2, Function2),
+pivot_chord_keys(ChordNote, Chord, Key1Note, Key1, Key2Note, Key2) :-
+    chord_key(Key1Note, Key1, ChordNote, Chord, Function1),
+    chord_key(Key2Note, Key2, ChordNote, Chord, Function2),
     Function1 \= Function2,
+    Key1Note \= Key2Note,
     Key1 \= Key2.
 
 % Taken directly from the book:
