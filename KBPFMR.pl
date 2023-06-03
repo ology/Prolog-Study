@@ -1,13 +1,5 @@
 % Adapted from the book, Knowledge-Based Programming for Music Research by Schaffer & McGee
 
-% Example:
-% ?- chord_key(Base, Key, g, maj, Function), not((Base == c, Key == maj)).
-% Base = d, Key = maj, Function = subdominant ;
-% Base = e, Key = min, Function = mediant ;
-% Base = g, Key = maj, Function = tonic ;
-% Base = a, Key = min, Function = subtonic ;
-% Base = b, Key = min, Function = submediant.
-%
 %   Args: base, key, note, chord, function
 chord_key(c,    maj, c,    maj,   tonic).
 chord_key(c,    maj, d,    min,   supertonic).
@@ -168,29 +160,24 @@ borrowed_chord(Chord, Key1, Key2, Function) :-
 
 /*
 % "What keys have a Dmaj chord as dominant?"
-key_member(X,dmaj,dominant).
-
-% "What are the keys that have a Gmaj chord as dominant?"
-key_member(X,gmaj,dominant).
+?- chord_key(d, maj, KeyNote, Key, dominant).
 
 % "What keys contain a Gmaj chord?"
-key_member(X,gmaj,_).
+?- chord_key(g, maj, KeyNote, Key, _).
 
 % "What key can modulate from Cmaj with Gmaj as pivot?"
-key_member(X,gmaj,Function), Key \= cmaj.
+?- pivot_chord_keys(g, maj, c, maj, Key1Function, Key2Note, Key2, Key2Function).
 
 % "What key can modulate to Cmin through a pivot chord?"
-key_member(Key,Chord,_), key_member(cmin,Chord,_), Key \= cmin.
+?- pivot_chord_keys(ChordNote, Chord, Key1Note, Key1, Key1Function, c, min, Key2Function).
 
 % "What keys have pivot chords that are dominant in the new key?"
-key_member(Key1,Chord,_), key_member(Key2,Chord,dominant), Key1 \= Key2.
+?- pivot_chord_keys(ChordNote, Chord, Key1Note, Key1, Key1Function, Key2Note, Key2, dominant).
 
 % "What keys can be modulated to, from Cmaj, using Gmaj as pivot?"
-pivot_chord(gmaj,cmaj,Key2).
-
-borrowed_chord(Chord,Key1,Key2,Function).
+?- pivot_chord_keys(g, maj, c, Key1, maj, Key2Note, Key2, Key2Function).
 
 % "What is the function of Gmaj borrowed between Cmaj & Cmin?
-borrowed_chord(gmaj,cmaj,cmin,Function).
-
+?- pivot_chord_keys(g, maj, c, maj, Key1Function, c, min, Key2Function).
+false.
 */
