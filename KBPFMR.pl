@@ -121,12 +121,16 @@ chord_key(b,    min, gf,   min,   dominant).
 chord_key(b,    min, g,    maj,   submediant).
 chord_key(b,    min, a,    maj,   subtonic).
 
-pivot_chord_keys(ChordNote, Chord, Key1Note, Key1, Key2Note, Key2) :-
-    chord_key(Key1Note, Key1, ChordNote, Chord, Function1),
-    chord_key(Key2Note, Key2, ChordNote, Chord, Function2),
-    Function1 \= Function2,
-    Key1Note \= Key2Note,
-    Key1 \= Key2.
+% Can a chord in one key function in a second?
+pivot_chord_keys(ChordNote, Chord, Key1Note, Key1, Key1Function, Key2Note, Key2, Key2Function) :-
+    % bind to the function of the first key
+    chord_key(Key1Note, Key1, ChordNote, Chord, Key1Function),
+    % bind to the function of the second key
+    chord_key(Key2Note, Key2, ChordNote, Chord, Key2Function),
+    % but the functions cannot be the same
+    Key1Function \= Key2Function,
+    % nor can the keys
+    not((Key1Note \= Key2Note, Key1 \= Key2)).
 
 % Taken directly from the book:
 
