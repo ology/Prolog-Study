@@ -120,10 +120,10 @@ pivot_chord_keys(ChordNote, Chord, Key1Note, Key1, Key1Function, Key2Note, Key2,
     % bind the chord to the function of the second key
     chord_key(Key2Note, Key2, ChordNote, Chord, Key2Function),
     % the functions cannot be the same
-    Key1Function \= Key2Function,
+    Key1Function \= Key2Function.
     % nor can the keys
-    Key1Note \= Key2Note,
-    Key1 \= Key2.
+%    Key1Note \= Key2Note,
+%    Key1 \= Key2.
 
 /*
 % What keys have a Dmaj chord as dominant?
