@@ -124,40 +124,6 @@ pivot_chord_keys(ChordNote, Chord, Key1Note, Key1, Key1Function, Key2Note, Key2,
     % nor can the keys
     not((Key1Note \= Key2Note, Key1 \= Key2)).
 
-% Taken directly from the book:
-
-key_member(cmaj, cmaj,  tonic).
-% key_member(cmaj, cmin,  tonic).       % sic. Incorrect.
-key_member(cmaj, gmaj,  dominant).
-key_member(cmaj, fmaj,  subdominant).
-% key_member(cmaj, fmin,  subdominant). % sic. Incorrect.
-key_member(cmin, cmin,  tonic).
-% key_member(cmin, cmaj,  tonic).       % sic. Incorrect.
-% key_member(cmin, gmaj,  dominant).    % sic. Incorrect.
-key_member(cmin, gmin,  dominant).      % Corrected.
-key_member(cmin, fmin,  subdominant).
-% key_member(cmin, fmaj,  subdominant). % sic. Incorrect.
-key_member(gmaj, gmaj,  tonic).
-key_member(gmaj, dmaj,  dominant).
-key_member(gmaj, cmaj,  subdominant).
-key_member(fmaj, fmaj,  tonic).
-key_member(fmaj, cmaj,  dominant).
-key_member(fmaj, bbmaj, subdominant).
-key_member(dmaj, dmaj,  tonic).
-key_member(dmaj, amaj,  dominant).
-key_member(dmaj, gmaj,  subdominant).
-
-pivot_chord(Chord, Key1, Key2) :-
-    key_member(Key1, Chord, Function1),
-    key_member(Key2, Chord, Function2),
-    Function1 \= Function2,
-    Key1 \= Key2.
-
-borrowed_chord(Chord, Key1, Key2, Function) :-
-    key_member(Key1, Chord, Function),
-    key_member(Key2, Chord, Function),
-    Key1 \= Key2.
-
 /*
 % "What keys have a Dmaj chord as dominant?"
 ?- chord_key(d, maj, KeyNote, Key, dominant).
