@@ -129,7 +129,7 @@ pivot_chord_keys(ChordNote, Chord, Key1Note, Key1, Key1Function, Key2Note, Key2,
 ?- chord_key(d, maj, KeyNote, Key, dominant).
 
 % What keys contain a Gmaj chord?
-?- chord_key(g, maj, KeyNote, Key, _).
+?- chord_key(g, maj, KeyNote, Key, Function).
 
 % What key can modulate from Cmaj with Gmaj as pivot?
 ?- pivot_chord_keys(g, maj, c, maj, Key1Function, Key2Note, Key2, Key2Function).
