@@ -122,7 +122,8 @@ pivot_chord_keys(ChordNote, Chord, Key1Note, Key1, Key1Function, Key2Note, Key2,
     % the functions cannot be the same
     Key1Function \= Key2Function,
     % nor can the keys
-    not((Key1Note \= Key2Note, Key1 \= Key2)).
+    Key1Note \= Key2Note,
+    Key1 \= Key2.
 
 /*
 % What keys have a Dmaj chord as dominant?
@@ -141,7 +142,7 @@ pivot_chord_keys(ChordNote, Chord, Key1Note, Key1, Key1Function, Key2Note, Key2,
 ?- pivot_chord_keys(ChordNote, Chord, Key1Note, Key1, Key1Function, Key2Note, Key2, dominant).
 
 % What keys can be modulated to, from Cmaj, using Gmaj as pivot?
-?- pivot_chord_keys(g, maj, c, Key1, maj, Key2Note, Key2, Key2Function).
+?- pivot_chord_keys(g, maj, c, Key1, Key1Function, Key2Note, Key2, Key2Function).
 
 % What is the function of Gmaj borrowed between Cmaj & Cmin?
 ?- pivot_chord_keys(g, maj, c, maj, Key1Function, c, min, Key2Function).
